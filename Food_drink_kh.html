@@ -1,0 +1,2823 @@
+<!doctype html>
+<html lang="km">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>LH Store - ម្ហូប និង ភេសជ្ជៈ[cite: 2]</title>
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <!-- AOS Animation CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@100..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Kantumruy Pro", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: #f7f8fa;
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      /* =========================
+         HEADER
+      ========================= */
+
+      header {
+        height: 40px;
+        padding: 0 115px;
+
+        background: white;
+        border-bottom: 1px solid #ddd;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        color: #68758a;
+        font-size: 14px;
+      }
+
+      .language {
+        position: relative;
+        cursor: pointer;
+      }
+
+      .language-button {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 8px;
+      }
+
+      .language-menu {
+        display: none;
+
+        position: absolute;
+        right: 0;
+        top: 100%;
+
+        width: 120px;
+
+        background: white;
+        border: 1px solid #eee;
+        border-radius: 6px;
+
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+        z-index: 3000;
+      }
+
+      .language:hover .language-menu {
+        display: block;
+      }
+
+      .language-menu a {
+        display: block;
+        padding: 9px 12px;
+
+        color: #333;
+        text-decoration: none;
+        font-size: 13px;
+      }
+
+      .language-menu a:hover {
+        background: #fde8e8;
+        color: #d71920;
+      }
+
+      /* =========================
+         LOGO / SEARCH / CART
+      ========================= */
+
+      .section1 {
+        min-height: 80px;
+
+        padding: 0 115px;
+
+        background: white;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 20px;
+      }
+
+      .logo img {
+        width: 80px;
+        display: block;
+      }
+
+      .search {
+        width: 100%;
+        max-width: 680px;
+        height: 42px;
+
+        display: flex;
+
+        border: 1px solid #c2c2c2;
+        border-radius: 8px;
+
+        overflow: hidden;
+
+        background: #f5f6fa;
+      }
+
+      .search input {
+        flex: 1;
+
+        border: none;
+        outline: none;
+
+        padding: 0 18px;
+
+        background: transparent;
+
+        font-size: 14px;
+      }
+
+      .search i {
+        width: 45px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: #d71920;
+        color: white;
+
+        cursor: pointer;
+      }
+
+      .right-s1 {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .icons {
+        display: flex;
+        gap: 20px;
+        font-size: 20px;
+      }
+
+      .icons i {
+        cursor: pointer;
+      }
+
+      .icons i:hover {
+        color: #d71920;
+      }
+
+      .money p:first-child {
+        color: #777;
+        font-size: 12px;
+      }
+
+      .money p:last-child {
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      /* =========================
+         NAVBAR
+      ========================= */
+
+      nav {
+        height: 45px;
+
+        padding: 0 115px;
+
+        background: #d71920;
+
+        display: flex;
+        align-items: center;
+
+        gap: 15px;
+
+        position: sticky;
+        top: 0;
+
+        z-index: 2000;
+      }
+
+      nav > a {
+        color: white;
+        text-decoration: none;
+
+        padding: 8px 16px;
+
+        border-radius: 6px;
+
+        white-space: nowrap;
+      }
+
+      nav > a:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      nav > a.active {
+        background: white;
+        color: #d71920;
+        font-weight: bold;
+      }
+
+      /* =========================
+         MOBILE PRODUCTS
+      ========================= */
+
+      .mobile-products {
+        display: none;
+      }
+
+      /* =========================
+         CATEGORY
+      ========================= */
+
+      .category-banner {
+        padding: 40px 115px;
+
+        background: #d71920;
+        color: white;
+
+        display: flex;
+        align-items: center;
+
+        gap: 20px;
+      }
+
+      .category-icon {
+        width: 65px;
+        height: 65px;
+
+        border-radius: 12px;
+
+        background: rgba(255, 255, 255, 0.2);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 32px;
+      }
+
+      .category-title h1 {
+        font-size: 32px;
+      }
+
+      .category-title p {
+        margin-top: 4px;
+        font-size: 14px;
+      }
+
+      /* =========================
+         MAIN
+      ========================= */
+
+      .container {
+        padding: 30px 115px;
+
+        display: grid;
+        grid-template-columns: 260px 1fr;
+
+        gap: 30px;
+
+        align-items: start;
+      }
+
+      /* =========================
+         FILTER
+      ========================= */
+
+      .filter-sidebar {
+        padding: 20px;
+
+        background: white;
+
+        border-radius: 12px;
+
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+        position: sticky;
+        top: 60px;
+      }
+
+      .filter-title {
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+
+        border-bottom: 1px solid #eee;
+
+        display: flex;
+        align-items: center;
+
+        gap: 10px;
+
+        font-weight: bold;
+      }
+
+      .filter-group {
+        margin-bottom: 25px;
+      }
+
+      .filter-item {
+        margin-bottom: 4px;
+        border-radius: 8px;
+      }
+
+      .filter-item a {
+        display: block;
+        width: 100%;
+
+        padding: 10px 12px;
+
+        color: #555;
+
+        text-decoration: none;
+
+        font-size: 14px;
+      }
+
+      .filter-item:hover {
+        background: #f8f9fa;
+      }
+
+      .filter-item:hover a {
+        color: #d71920;
+      }
+
+      .filter-item.active {
+        background: #fde8e8;
+      }
+
+      .filter-item.active a {
+        color: #d71920;
+        font-weight: bold;
+      }
+
+      /* =========================
+         PRODUCT HEADER
+      ========================= */
+
+      .products-header {
+        margin-bottom: 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 15px;
+      }
+
+      .showing-text {
+        color: #666;
+        font-size: 15px;
+      }
+
+      .view-options {
+        display: flex;
+        gap: 8px;
+      }
+
+      .view-btn {
+        width: 36px;
+        height: 36px;
+
+        border: 1px solid #ddd;
+        border-radius: 8px;
+
+        background: white;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer;
+      }
+
+      .view-btn.active {
+        background: #d71920;
+        color: white;
+        border-color: #d71920;
+      }
+
+      /* =========================
+         PRODUCT GRID
+      ========================= */
+
+      .product-grid {
+        display: grid;
+
+        grid-template-columns: repeat(4, 1fr);
+
+        gap: 20px;
+      }
+
+      /* =========================
+         PRODUCT CARD
+      ========================= */
+
+      .product-card {
+        background: #e3e3e3;
+
+        border: 1px solid #eee;
+
+        border-radius: 12px;
+
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+
+        transition: 0.3s;
+
+        cursor: pointer;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      .product-img {
+        width: 100%;
+        height: 200px;
+
+        background: #f0f3f6;
+
+        overflow: hidden;
+      }
+
+      .product-img img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        display: block;
+
+        transition: 0.4s;
+      }
+
+      .product-card:hover .product-img img {
+        transform: scale(1.08);
+      }
+
+      /* =========================
+         PRODUCT INFO
+      ========================= */
+
+      .product-info {
+        padding: 12px;
+
+        display: flex;
+        flex-direction: column;
+
+        flex: 1;
+      }
+
+      .product-category {
+        color: #888;
+        font-size: 12px;
+        min-height: 18px;
+      }
+
+      .product-name {
+        margin-top: 4px;
+
+        color: #222;
+
+        font-size: 14px;
+        font-weight: 600;
+
+        line-height: 1.4;
+
+        min-height: 40px;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+
+        overflow: hidden;
+      }
+
+      /* =========================
+         RATING
+      ========================= */
+
+      .rating {
+        margin-top: 8px;
+
+        min-height: 18px;
+
+        display: flex;
+        align-items: center;
+
+        gap: 4px;
+
+        color: #e6a23c;
+
+        font-size: 12px;
+      }
+
+      .rating span {
+        color: #888;
+      }
+
+      /* =========================
+         PRICE + ICONS
+      ========================= */
+
+      .card-bottom {
+        margin-top: auto;
+
+        padding-top: 8px;
+
+        min-height: 38px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 6px;
+      }
+
+      .price {
+        color: #d71920;
+
+        font-size: 16px;
+        font-weight: bold;
+
+        white-space: nowrap;
+      }
+
+      .price span {
+        color: #777;
+
+        font-size: 11px;
+        font-weight: normal;
+      }
+
+      .card-icons {
+        display: flex;
+        align-items: center;
+
+        gap: 4px;
+
+        flex-shrink: 0;
+      }
+
+      .card-icons i {
+        width: 28px;
+        height: 28px;
+
+        border: 1px solid #ddd;
+
+        border-radius: 50%;
+
+        background: white;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: #666;
+
+        font-size: 12px;
+
+        cursor: pointer;
+
+        transition: 0.2s;
+      }
+
+      .card-icons i:hover {
+        background: #d71920;
+        border-color: #d71920;
+
+        color: white;
+      }
+
+      /* =========================
+         FOOTER
+      ========================= */
+
+      footer {
+        margin-top: 50px;
+
+        background: #101827;
+        color: white;
+      }
+
+      .newsletter {
+        padding: 35px 115px;
+
+        border-bottom: 1px solid #293241;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 25px;
+      }
+
+      .newsletter h2 {
+        margin-bottom: 10px;
+        font-size: 24px;
+      }
+
+      .newsletter p {
+        color: #b8c2d3;
+      }
+
+      .subscribe {
+        display: flex;
+        gap: 10px;
+      }
+
+      .subscribe input {
+        width: 350px;
+        height: 48px;
+
+        padding: 0 18px;
+
+        border: 1px solid #596273;
+        border-radius: 12px;
+
+        background: #273142;
+        color: white;
+
+        outline: none;
+      }
+
+      .subscribe button {
+        height: 48px;
+
+        padding: 0 30px;
+
+        border: none;
+        border-radius: 12px;
+
+        background: #ff7a00;
+        color: white;
+
+        font-weight: bold;
+
+        cursor: pointer;
+      }
+
+      .footer-main {
+        padding: 55px 115px;
+
+        display: grid;
+
+        grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+
+        gap: 50px;
+      }
+
+      .footer-logo img {
+        width: 200px;
+      }
+
+      .footer-logo p {
+        margin-top: 25px;
+
+        color: #b8c2d3;
+
+        line-height: 1.6;
+      }
+
+      .footer-col h3 {
+        margin-bottom: 25px;
+      }
+
+      .footer-col p {
+        margin: 15px 0;
+
+        color: #b8c2d3;
+
+        cursor: pointer;
+      }
+
+      .contact i {
+        margin-right: 12px;
+        color: #ff7a00;
+      }
+
+      .social {
+        margin-top: 25px;
+
+        display: flex;
+        gap: 15px;
+      }
+
+      .social i {
+        width: 40px;
+        height: 40px;
+
+        border-radius: 50%;
+
+        background: #273142;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 20px;
+
+        cursor: pointer;
+      }
+
+      /* =========================
+         1200px
+      ========================= */
+
+      @media (max-width: 1200px) {
+        header,
+        .section1,
+        nav,
+        .category-banner,
+        .container,
+        .newsletter,
+        .footer-main {
+          padding-left: 40px;
+          padding-right: 40px;
+        }
+
+        .product-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      /* =========================
+         900px
+      ========================= */
+
+      @media (max-width: 900px) {
+        .container {
+          padding: 20px;
+          grid-template-columns: 1fr;
+        }
+
+        .filter-sidebar {
+          position: relative;
+          top: 0;
+        }
+
+        .product-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .newsletter {
+          padding: 30px 20px;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .footer-main {
+          padding: 30px 20px;
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+      }
+
+      /* =========================
+         768px MOBILE
+      ========================= */
+
+      @media (max-width: 768px) {
+        header {
+          height: 40px;
+          padding: 0 15px;
+          font-size: 12px;
+        }
+
+        .section1 {
+          padding: 15px;
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .logo img {
+          width: 80px;
+        }
+
+        .search {
+          width: 100%;
+          max-width: none;
+        }
+
+        .right-s1 {
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        .icons {
+          gap: 18px;
+          font-size: 20px;
+        }
+
+        /* =========================
+           MOBILE NAVBAR
+        ========================= */
+
+        nav {
+          height: auto;
+          padding: 0;
+          display: block;
+          position: sticky;
+          top: 0;
+          z-index: 2000;
+        }
+
+        nav > a {
+          display: none;
+        }
+
+        .mobile-products {
+          display: block;
+          width: 100%;
+        }
+
+        .mobile-products-button {
+          width: 100%;
+          height: 45px;
+
+          padding: 0 15px;
+
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          color: white;
+
+          cursor: pointer;
+        }
+
+        .mobile-products-left {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .mobile-products-menu {
+          display: none;
+          width: 100%;
+          background: white;
+        }
+
+        .mobile-products.open .mobile-products-menu {
+          display: block;
+        }
+
+        .mobile-products-menu a {
+          width: 100%;
+
+          padding: 13px 18px;
+
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          color: #333;
+
+          text-decoration: none;
+
+          border-bottom: 1px solid #eee;
+
+          background: white;
+
+          transition: 0.2s;
+        }
+
+        .mobile-products-menu a:hover {
+          background: #fde8e8;
+          color: #d71920;
+        }
+
+        .mobile-products-menu a.active {
+          background: #fde8e8;
+          color: #d71920;
+          font-weight: bold;
+        }
+
+        /* =========================
+           CATEGORY
+        ========================= */
+
+        .category-banner {
+          padding: 25px 15px;
+
+          flex-direction: column;
+
+          text-align: center;
+
+          gap: 12px;
+        }
+
+        .category-icon {
+          width: 60px;
+          height: 60px;
+
+          font-size: 28px;
+        }
+
+        .category-title h1 {
+          font-size: 24px;
+        }
+
+        .category-title p {
+          font-size: 13px;
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .container {
+          padding: 20px 15px;
+          display: block;
+        }
+
+        .filter-sidebar {
+          position: relative;
+          top: 0;
+          margin-bottom: 20px;
+        }
+
+        .products-header {
+          margin-bottom: 15px;
+        }
+
+        .showing-text {
+          font-size: 13px;
+        }
+
+        .view-btn {
+          width: 35px;
+          height: 35px;
+        }
+
+        .product-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 15px;
+        }
+
+        .product-img {
+          height: 190px;
+        }
+
+        .product-info {
+          padding: 10px;
+        }
+
+        .product-category {
+          font-size: 11px;
+        }
+
+        .product-name {
+          font-size: 13px;
+          min-height: 38px;
+        }
+
+        .rating {
+          font-size: 11px;
+        }
+
+        .card-bottom {
+          gap: 4px;
+        }
+
+        .price {
+          font-size: 14px;
+        }
+
+        .price span {
+          font-size: 9px;
+        }
+
+        .card-icons {
+          gap: 3px;
+        }
+
+        .card-icons i {
+          width: 27px;
+          height: 27px;
+          font-size: 11px;
+        }
+
+        /* =========================
+           NEWSLETTER
+        ========================= */
+
+        .newsletter {
+          padding: 30px 15px;
+
+          flex-direction: column;
+
+          align-items: flex-start;
+
+          gap: 20px;
+        }
+
+        .newsletter h2 {
+          font-size: 21px;
+        }
+
+        .newsletter p {
+          font-size: 13px;
+        }
+
+        .subscribe {
+          width: 100%;
+          flex-direction: column;
+        }
+
+        .subscribe input {
+          width: 100%;
+        }
+
+        .subscribe button {
+          width: 100%;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer-main {
+          padding: 35px 15px;
+
+          grid-template-columns: 1fr;
+
+          gap: 30px;
+        }
+
+        .footer-logo img {
+          width: 170px;
+        }
+      }
+
+      /* =========================
+         600px
+      ========================= */
+
+      @media (max-width: 600px) {
+        .product-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+        }
+
+        .product-img {
+          height: 180px;
+        }
+
+        .product-info {
+          padding: 9px;
+        }
+
+        .product-name {
+          font-size: 13px;
+        }
+
+        .price {
+          font-size: 14px;
+        }
+
+        .card-icons i {
+          width: 26px;
+          height: 26px;
+          font-size: 10px;
+        }
+      }
+
+      /* =========================
+         480px
+      ========================= */
+
+      @media (max-width: 480px) {
+        header {
+          padding: 0 12px;
+        }
+
+        .section1 {
+          padding: 12px;
+        }
+
+        .logo img {
+          width: 75px;
+        }
+
+        .icons {
+          gap: 14px;
+          font-size: 18px;
+        }
+
+        .money p:last-child {
+          font-size: 13px;
+        }
+
+        .category-banner {
+          padding: 22px 12px;
+        }
+
+        .category-icon {
+          width: 55px;
+          height: 55px;
+          font-size: 26px;
+        }
+
+        .category-title h1 {
+          font-size: 22px;
+        }
+
+        .container {
+          padding: 15px 12px;
+        }
+
+        .product-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+        }
+
+        .product-img {
+          height: 165px;
+        }
+
+        .product-info {
+          padding: 8px;
+        }
+
+        .product-name {
+          font-size: 12px;
+        }
+
+        .rating {
+          margin-top: 5px;
+        }
+
+        .price {
+          font-size: 13px;
+        }
+
+        .price span {
+          font-size: 8px;
+        }
+
+        .card-icons {
+          gap: 2px;
+        }
+
+        .card-icons i {
+          width: 24px;
+          height: 24px;
+          font-size: 9px;
+        }
+      }
+
+      /* =========================
+         360px
+      ========================= */
+
+      @media (max-width: 360px) {
+        .product-grid {
+          gap: 8px;
+        }
+
+        .product-img {
+          height: 150px;
+        }
+
+        .product-info {
+          padding: 7px;
+        }
+
+        .product-name {
+          font-size: 11px;
+        }
+
+        .price {
+          font-size: 12px;
+        }
+
+        .price span {
+          font-size: 7px;
+        }
+
+        .card-icons i {
+          width: 22px;
+          height: 22px;
+          font-size: 8px;
+        }
+      }
+
+      /* =========================
+         AOS MOBILE FIX
+      ========================= */
+
+      @media (max-width: 768px) {
+        [data-aos] {
+          transition-duration: 700ms !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+      <div>
+        <i class="bi bi-telephone"></i>
+        +855 99 456 459
+      </div>
+
+      <div class="language">
+        <div class="language-button">
+          KH Khmer
+          <i class="bi bi-chevron-down"></i>
+        </div>
+
+        <div class="language-menu">
+          <a href="Food_drink.html">US English</a>
+          <a href="Food_drink_kh.html">KH Khmer</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- =========================
+         LOGO / SEARCH / CART
+    ========================= -->
+
+    <section class="section1">
+      <div class="logo">
+        <img src="Logo.png" alt="សញ្ញសម្គាល់ LH Store" />
+      </div>
+
+      <div class="search">
+        <input type="text" placeholder="ស្វែងរកទំនិញ..." />
+        <i class="bi bi-search"></i>
+      </div>
+
+      <div class="right-s1">
+        <div class="icons">
+          <i class="bi bi-heart" title="ទំនិញដែលស្រឡាញ់"></i>
+          <i class="bi bi-person" title="គណនី"></i>
+          <i class="bi bi-cart3" title="កន្ត្រកទบทំនិញ"></i>
+        </div>
+
+        <div class="money">
+          <p>កន្ត្រករបស់ខ្ញុំ</p>
+          <p>$0.00</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav>
+      <!-- DESKTOP -->
+
+      <a href="health.html">សុខភាព និង សម្រស់</a>
+
+      <a href="Fashion.html">ម៉ូដបុរស</a>
+
+      <a href="kictchen.html">ផ្ទះ និង ផ្ទះបាយ</a>
+
+      <a href="Food_drink.html" class="active">ម្ហូប និង ភេសជ្ជៈ</a>
+
+      <a href="Contact.html">ទំនាក់ទំនង</a>
+
+      <!-- MOBILE -->
+
+      <div class="mobile-products" id="mobileProducts">
+        <div class="mobile-products-button" id="mobileProductsButton">
+          <div class="mobile-products-left">
+            <i class="bi bi-grid"></i>
+            <span>ផលិតផល</span>
+          </div>
+
+          <i class="bi bi-chevron-down" id="productsArrow"></i>
+        </div>
+
+        <div class="mobile-products-menu">
+          <a href="health.html">
+            <span>សុខភាព និង សម្រស់</span>
+            <i class="bi bi-chevron-right"></i>
+          </a>
+
+          <a href="Fashion.html">
+            <span>ម៉ូដបុរស</span>
+            <i class="bi bi-chevron-right"></i>
+          </a>
+
+          <a href="kictchen.html">
+            <span>ផ្ទះ និង ផ្ទះបាយ</span>
+            <i class="bi bi-chevron-right"></i>
+          </a>
+
+          <a href="Food_drink.html" class="active">
+            <span>ម្ហូប និង ភេសជ្ជៈ</span>
+            <i class="bi bi-chevron-right"></i>
+          </a>
+
+          <a href="Contact.html">
+            <span>ទំនាក់ទំនង</span>
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- =========================
+         CATEGORY
+    ========================= -->
+
+    <section class="category-banner">
+      <div class="category-icon" data-aos="zoom-in">
+        <i class="bi bi-fork-knife"></i>
+      </div>
+
+      <div class="category-title" data-aos="fade-left">
+        <h1>ម្ហូប និង ភេសជ្ជៈ</h1>
+        <p>ផលិតផលចំនួន ៧៤</p>
+      </div>
+    </section>
+
+    <!-- =========================
+         MAIN
+    ========================= -->
+
+    <div class="container">
+      <!-- FILTER -->
+
+      <aside class="filter-sidebar" data-aos="fade-right">
+        <div class="filter-title">
+          <i class="bi bi-sliders"></i>
+          តម្រៀបតាម
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-item active">
+            <a href="#alcohol">គ្រឿងស្រវឹង</a>
+          </div>
+
+          <div class="filter-item">
+            <a href="#food">អាហារ</a>
+          </div>
+
+          <div class="filter-item">
+            <a href="#coffee">កាហ្វេ</a>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-item">
+            <a href="index_kh.html" style="color: #000000"> ទៅកាន់ទំព័រដើម </a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- PRODUCTS -->
+
+      <main>
+        <div class="products-header" data-aos="fade-down">
+          <div class="showing-text">
+            កំពុងបង្ហាញ
+            <strong>២៤</strong>
+            នៃ
+            <strong>៧៤</strong>
+            ផលិតផល
+          </div>
+
+          <div class="view-options">
+            <button class="view-btn active" type="button">
+              <i class="bi bi-grid-fill"></i>
+            </button>
+
+            <button class="view-btn" type="button">
+              <i class="bi bi-list-ul"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- =========================
+             PRODUCT GRID
+        ========================= -->
+
+        <div class="product-grid">
+          <!-- PRODUCT 1 -->
+
+          <div class="product-card" id="alcohol" data-aos="fade-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1779440864305-13.jpg"
+                alt="Champagne brut 375ml"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">គ្រឿងស្រវឹង</div>
+
+              <div class="product-name">
+                ស្រាシャンパン Brut ទំហំ 375មីលីលីត្រ
+              </div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៤.៩</strong>
+                <span>(១២)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $35.00
+                  <span>/ ដប</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 2 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="50">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1779440765429-12.jpg"
+                alt="Amancaya 2021"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">គ្រឿងស្រវឹង</div>
+
+              <div class="product-name">ស្រា Amancaya ឆ្នាំ 2021</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៤.៨</strong>
+                <span>(១៥)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $42.00
+                  <span>/ ដប</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 3 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1779440686701-11.jpg"
+                alt="Les Legendes Bordeaux 2020"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">គ្រឿងស្រវឹង</div>
+
+              <div class="product-name">
+                ស្រា Les Legendes Bordeaux ឆ្នាំ 2020
+              </div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៤.៦</strong>
+                <span>(៨)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $30.80
+                  <span>/ ដប</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 4 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1779440470610-10.jpg"
+                alt="Chateau villa bel air 2016"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">គ្រឿងស្រវឹង</div>
+
+              <div class="product-name">
+                ស្រា Chateau villa bel air ឆ្នាំ 2016
+              </div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៥.០</strong>
+                <span>(២០)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $40.60
+                  <span>/ ដប</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 5 -->
+
+          <div class="product-card" data-aos="fade-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1779440394019-9.jpg"
+                alt="Atan D'Aussieres 2020"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">គ្រឿងស្រវឹង</div>
+
+              <div class="product-name">ស្រា Atan D'Aussieres ឆ្នាំ 2020</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៤.៧</strong>
+                <span>(៩)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $35.00
+                  <span>/ ដប</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 6 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="50">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1779439776705-8.jpg"
+                alt="Aussieres Rose 2022"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">គ្រឿងស្រវឹង</div>
+
+              <div class="product-name">ស្រា Aussieres Rose ឆ្នាំ 2022</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៤.៥</strong>
+                <span>(៦)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $25.90
+                  <span>/ ដប</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 7 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1779439674963-7.jpg"
+                alt="Aussieres chardonnay 2022"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">គ្រឿងស្រវឹង</div>
+
+              <div class="product-name">
+                ស្រា Aussieres chardonnay ឆ្នាំ 2022
+              </div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៤.៨</strong>
+                <span>(១១)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $25.90
+                  <span>/ ដប</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 8 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1779439599563-6.jpg"
+                alt="Aussieres Rouge 2021"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">គ្រឿងស្រវឹង</div>
+
+              <div class="product-name">ស្រា Aussieres Rouge ឆ្នាំ 2021</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៤.៤</strong>
+                <span>(៥)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $25.90
+                  <span>/ ដប</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 9 -->
+
+          <div class="product-card" id="food" data-aos="fade-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1779343808475-spicy%20beef.jpg"
+                alt="Spicy Beef Jerky 50g"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">អាហារ</div>
+
+              <div class="product-name">សាច់គោក្រៀម រសជាតិម្ទេស 50ក្រាម</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៤.៨</strong>
+                <span>(១០)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $4.20
+                  <span>/ កំប៉ុង</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 10 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="50">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1779343782822-beef.jpg"
+                alt="Original Beef Jerky 50g"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">អាហារ</div>
+
+              <div class="product-name">សាច់គោក្រៀម រសជាតិដើម 50ក្រាម</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៥.០</strong>
+                <span>(១)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $4.20
+                  <span>/ កំប៉ុង</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 11 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1779343968624-spicy%20chicken.jpg"
+                alt="Spicy Chicken Jerky 75g"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">អាហារ</div>
+
+              <div class="product-name">សាច់មាន់ក្រៀម រសជាតិម្ទេស 75ក្រាម</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៥.០</strong>
+                <span>(១)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $4.20
+                  <span>/ កំប៉ុង</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 12 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1779343867185-chicken1.jpg"
+                alt="Original Chicken Jerky 75g"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">អាហារ</div>
+
+              <div class="product-name">សាច់មាន់ក្រៀម រសជាតិដើម 75ក្រាម</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៥.០</strong>
+                <span>(១)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $4.20
+                  <span>/ កំប៉ុង</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 13 -->
+
+          <div class="product-card" data-aos="fade-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1777972247623-Cashew%20nut%20500g.jpg"
+                alt="Cashew nut 500g"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">អាហារ</div>
+
+              <div class="product-name">គ្រាប់ស្វាយចន្ទី 500ក្រាម</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៤.៩</strong>
+                <span>(១៦)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $7.00
+                  <span>/ កញ្ចប់</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 14 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="50">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1777970699438-cookie-coffee-bottle.jpg"
+                alt="Cambodian coffee cookie 150g"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">អាហារ</div>
+
+              <div class="product-name">នំខូគីកាហ្វេខ្មែរ 150ក្រាម</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៤.៦</strong>
+                <span>(៧)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $2.50
+                  <span>/ កំប៉ុង</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 15 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1777970699438-cookie-coffee-bottle.jpg"
+                alt="Cambodian coconut cookie 150g"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">អាហារ</div>
+
+              <div class="product-name">នំខូគីដូងខ្មែរ 150ក្រាម</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៤.៧</strong>
+                <span>(៩)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $2.50
+                  <span>/ កំប៉ុង</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 16 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1777971173259-coconut-cookie-bottle.jpg"
+                alt="Cambodian sesame cookie 150g"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">អាហារ</div>
+
+              <div class="product-name">នំខូគីល្ងខ្មែរ 150ក្រាម</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៤.៥</strong>
+                <span>(៥)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $2.50
+                  <span>/ កំប៉ុង</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 17 -->
+
+          <div class="product-card" data-aos="fade-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1777967209618-cookie-coconut.jpg"
+                alt="Cambodian dried coconut cookie 150g"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">អាហារ</div>
+
+              <div class="product-name">នំខូគីដូងក្រៀមខ្មែរ 150ក្រាម</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៤.៨</strong>
+                <span>(១២)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $3.00
+                  <span>/ ប្រអប់</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 18 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="50">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1777967045937-cookie-cashew.jpg"
+                alt="Cambodian cashew nut cookie 150g"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">អាហារ</div>
+
+              <div class="product-name">
+                នំខូគីគ្រាប់ស្វាយចន្ទីខ្មែរ 150ក្រាម
+              </div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៤.៦</strong>
+                <span>(៨)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $3.00
+                  <span>/ ប្រអប់</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 19 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1777966302256-cashew%20nut.jpg"
+                alt="Cambodian cashew nut 200g"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">អាហារ</div>
+
+              <div class="product-name">គ្រាប់ស្វាយចន្ទីខ្មែរ 200ក្រាម</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៤.៩</strong>
+                <span>(១៥)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $4.50
+                  <span>/ ប្រអប់</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 20 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1777966458036-dried%20pine.jpg"
+                alt="Cambodian dried pineapple 200g"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">អាហារ</div>
+
+              <div class="product-name">ម្នាស់ក្រៀមខ្មែរ 200ក្រាម</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៤.៧</strong>
+                <span>(១០)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $4.50
+                  <span>/ ប្រអប់</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 21 -->
+
+          <div class="product-card" data-aos="fade-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1777963454465-dried%20coconut.jpg"
+                alt="Cambodian dried coconut 100g"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">អាហារ</div>
+
+              <div class="product-name">ដូងក្រៀមខ្មែរ 100ក្រាម</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៤.៥</strong>
+                <span>(៦)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $3.00
+                  <span>/ ប្រអប់</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 22 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="50">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1777966609779-dried%20mango.jpg"
+                alt="Cambodian dried mango 500g"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">អាហារ</div>
+
+              <div class="product-name">
+                ស្វាយចន្ទី/ស្វាយក្រៀមខ្មែរ 500ក្រាម
+              </div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៥.០</strong>
+                <span>(១៨)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $5.50
+                  <span>/ កញ្ចប់</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 23 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1777962550036-dired%20mango%20svay%20angkor-1.jpg"
+                alt="Cambodian dried mango 200g"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">អាហារ</div>
+
+              <div class="product-name">ស្វាយក្រៀមខ្មែរ 200ក្រាម</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៤.៤</strong>
+                <span>(៥)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $3.00
+                  <span>/ ប្រអប់</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 24 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1774943298516-C4.jpg"
+                alt="SOVANN CAPSULE COFFEE"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">អាហារ</div>
+
+              <div class="product-name">កាហ្វេកាប់ស៊ูล SOVANN (រ៉ូប៊ូស្តា)</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>៤.៩</strong>
+                <span>(១៤)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $7.50
+                  <span>/ ប្រអប់</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 25 -->
+
+          <div class="product-card" id="coffee" data-aos="fade-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1774942591293-SV4.jpg"
+                alt="SOVANN SPECIALTY DRIP COFFEE"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">កាហ្វេ</div>
+
+              <div class="product-name">កាហ្វេតក់ពិសេស SOVANN</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>០.០</strong>
+                <span>(០)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $7.00
+                  <span>/ ប្រអប់</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 26 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="50">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1774942445550-Pr-Ro1.jpg"
+                alt="ROBUSTA DRIP COFFEE"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">កាហ្វេ</div>
+
+              <div class="product-name">
+                កាហ្វេតក់ រ៉ូប៊ូស្តា (ROBUSTA DRIP COFFEE)
+              </div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>០.០</strong>
+                <span>(០)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $4.50
+                  <span>/ ប្រអប់</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 27 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1774942231029-DSC08986.jpg"
+                alt="ARABICA DRIP COFFEE"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">កាហ្វេ</div>
+
+              <div class="product-name">
+                កាហ្វេតក់ អារ៉ាប៊ីកា (ARABICA DRIP COFFEE)
+              </div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>០.០</strong>
+                <span>(០)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $7.00
+                  <span>/ ប្រអប់</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 28 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1774941946600-DSC08939.jpg"
+                alt="KESOR"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">កាហ្វេ</div>
+
+              <div class="product-name">កេសរ KESOR</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>០.០</strong>
+                <span>(០)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $14.00
+                  <span>/ កញ្ចប់</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 29 -->
+
+          <div class="product-card" data-aos="fade-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1774941779326-DSC08947.jpg"
+                alt="CHAN"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">កាហ្វេ</div>
+
+              <div class="product-name">ចន្ទន៍ CHAN</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>០.០</strong>
+                <span>(០)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $9.50
+                  <span>/ កញ្ចប់</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 30 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="50">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1774941342082-DSC08954.jpg"
+                alt="KHLOEM"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">កាហ្វេ</div>
+
+              <div class="product-name">ខ្លឹម KHLOEM</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>០.០</strong>
+                <span>(០)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $7.50
+                  <span>/ កញ្ចប់</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 31 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1774940994635-DSC08966.jpg"
+                alt="Robusta Natural Anaerobic"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">កាហ្វេ</div>
+
+              <div class="product-name">
+                រ៉ូប៊ូស្តា ធម្មជាតិ អានែរ៉ូប៊ិក (Robusta Natural Anaerobic)
+              </div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>០.០</strong>
+                <span>(០)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $7.00
+                  <span>/ កញ្ចប់</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUCT 32 -->
+
+          <div class="product-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1774861101719-Render_Mockup_1600_1200_2025-11-11%20(7).jpg"
+                alt="Banana powder"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">កាហ្វេ</div>
+
+              <div class="product-name">ម្សៅចេក (ប្រអប់ធំ)</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>០.០</strong>
+                <span>(០)</span>
+              </div>
+
+              <div class="card-bottom">
+                <div class="price">
+                  $17.00
+                  <span>/ កញ្ចប់</span>
+                </div>
+
+                <div class="card-icons">
+                  <i class="bi bi-eye"></i>
+                  <i class="bi bi-cart3"></i>
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+      <div class="newsletter">
+        <div>
+          <h2>ជាវប្រចាំដើម្បីទទួលបានព័ត៌មានថ្មីៗ</h2>
+
+          <p>ទទួលបានព័ត៌មានអាប់ដេតលើផលិតផលថ្មីៗ និងការបញ្ចុះតម្លៃពិសេសៗ!</p>
+        </div>
+
+        <div class="subscribe">
+          <input type="email" placeholder="បញ្ចូលអ៊ីមែលរបស់អ្នក" />
+
+          <button type="button">ចុះឈ្មោះជាវ</button>
+        </div>
+      </div>
+
+      <div class="footer-main">
+        <!-- LOGO -->
+
+        <div class="footer-logo" data-aos="fade-up">
+          <img src="Logo.png" alt="ឡូហ្គោ" />
+
+          <p>
+            ទីកន្លែងតែមួយដែលបំពេញរាល់តម្រូវការទិញទំនិញរបស់អ្នក។
+            ផលិតផលមានគុណភាពពីអ្នកផ្គត់ផ្គង់ដែលគួរឱ្យទុកចិត្ត។
+          </p>
+
+          <div class="social">
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-twitter"></i>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-youtube"></i>
+          </div>
+        </div>
+
+        <!-- QUICK LINKS -->
+
+        <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
+          <h3>តំណរភ្ជាប់រហ័ស</h3>
+
+          <p>អំពីពួកយើង</p>
+
+          <p>ទំនាក់ទំនងមកយើងខ្ញុំ</p>
+
+          <p>សំណួរដែលសួរញឹកញាប់ (FAQ)</p>
+        </div>
+
+        <!-- ACCOUNT -->
+
+        <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
+          <h3>គណនីរបស់ខ្ញុំ</h3>
+
+          <p>ប្រវត្តិរូបរបស់ខ្ញុំ</p>
+
+          <p>ប្រវត្តិនៃការបញ្ជាទិញ</p>
+
+          <p>ទំនិញដែលស្រឡាញ់</p>
+        </div>
+
+        <!-- CONTACT -->
+
+        <div class="footer-col contact" data-aos="fade-up" data-aos-delay="300">
+          <h3>ព័ត៌មានទំនាក់ទំនង</h3>
+
+          <p>
+            <i class="bi bi-geo-alt"></i>
+            ផ្ទះលេខ #1891 បុរីអាតវូដ ផ្លូវ 110E សង្កាត់ទឹកថ្លា ខណ្ឌសែនសែនសុខ
+            រាជធានីភ្នំពេញ
+          </p>
+
+          <p>
+            <i class="bi bi-telephone"></i>
+            +855 99 456 459
+          </p>
+
+          <p>
+            <i class="bi bi-envelope"></i>
+            bakseymarket@gmail.com
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =========================
+         AOS JAVASCRIPT
+    ========================= -->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      /* =========================
+         INITIALIZE AOS
+      ========================= */
+
+      document.addEventListener("DOMContentLoaded", function () {
+        AOS.init({
+          duration: 800,
+          easing: "ease-in-out",
+          once: false,
+          mirror: true,
+          offset: 80,
+          anchorPlacement: "top-bottom",
+        });
+      });
+
+      /* =========================
+         MOBILE PRODUCTS
+      ========================= */
+
+      const products = document.getElementById("mobileProducts");
+
+      const productsButton = document.getElementById("mobileProductsButton");
+
+      const productsArrow = document.getElementById("productsArrow");
+
+      if (products && productsButton && productsArrow) {
+        productsButton.addEventListener("click", function (event) {
+          event.stopPropagation();
+
+          products.classList.toggle("open");
+
+          if (products.classList.contains("open")) {
+            productsArrow.classList.remove("bi-chevron-down");
+
+            productsArrow.classList.add("bi-chevron-up");
+          } else {
+            productsArrow.classList.remove("bi-chevron-up");
+
+            productsArrow.classList.add("bi-chevron-down");
+          }
+        });
+      }
+
+      /* =========================
+         CLOSE MOBILE MENU
+         WHEN CLICK OUTSIDE
+      ========================= */
+
+      document.addEventListener("click", function (event) {
+        if (!products) {
+          return;
+        }
+
+        if (!products.contains(event.target)) {
+          products.classList.remove("open");
+
+          if (productsArrow) {
+            productsArrow.classList.remove("bi-chevron-up");
+
+            productsArrow.classList.add("bi-chevron-down");
+          }
+        }
+      });
+
+      /* =========================
+         MOBILE MENU ACTIVE
+      ========================= */
+
+      const mobileLinks = document.querySelectorAll(".mobile-products-menu a");
+
+      mobileLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+          mobileLinks.forEach(function (item) {
+            item.classList.remove("active");
+          });
+
+          this.classList.add("active");
+        });
+      });
+
+      /* =========================
+         FILTER ACTIVE
+      ========================= */
+
+      const filterItems = document.querySelectorAll(
+        ".filter-group .filter-item",
+      );
+
+      filterItems.forEach(function (item) {
+        const link = item.querySelector("a");
+
+        if (!link) {
+          return;
+        }
+
+        link.addEventListener("click", function () {
+          const href = this.getAttribute("href");
+
+          if (href && href.startsWith("#")) {
+            filterItems.forEach(function (i) {
+              i.classList.remove("active");
+            });
+
+            item.classList.add("active");
+          }
+        });
+      });
+
+      /* =========================
+         REFRESH AOS AFTER IMAGES LOAD
+      ========================= */
+
+      window.addEventListener("load", function () {
+        if (typeof AOS !== "undefined") {
+          AOS.refresh();
+        }
+      });
+    </script>
+  </body>
+</html>

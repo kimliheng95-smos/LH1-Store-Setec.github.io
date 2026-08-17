@@ -1,0 +1,2767 @@
+<!doctype html>
+<html lang="km">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>LH Store - សុខភាព និង សម្រស់</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@100..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 70px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Kantumruy Pro", sans-serif;
+      }
+
+      body {
+        background: #f7f8fa;
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      /* =========================
+         TOP HEADER
+      ========================= */
+
+      header {
+        height: 40px;
+        padding: 0 115px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #ddd;
+        background: #fff;
+        color: #68758a;
+        font-size: 14px;
+      }
+
+      .lang-dropdown {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+      }
+
+      .lang-btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 8px;
+        border-radius: 4px;
+        transition: background 0.3s ease;
+      }
+
+      .lang-btn:hover {
+        background: #f0f0f0;
+      }
+
+      .lang-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #fff;
+        min-width: 120px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border-radius: 6px;
+        display: none;
+        flex-direction: column;
+        z-index: 3000;
+        overflow: hidden;
+        border: 1px solid #eee;
+      }
+
+      .lang-dropdown:hover .lang-menu {
+        display: flex;
+      }
+
+      .lang-item {
+        padding: 8px 14px;
+        color: #333;
+        text-decoration: none;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: background 0.2s ease;
+      }
+
+      .lang-item:hover {
+        background: #fde8e8;
+        color: #d71920;
+      }
+
+      /* =========================
+         SECTION 1
+      ========================= */
+
+      .section1 {
+        min-height: 80px;
+        padding: 0 115px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .logo img {
+        width: 80px;
+        display: block;
+      }
+
+      .search {
+        display: flex;
+        width: 100%;
+        max-width: 680px;
+        height: 42px;
+        border: 1px solid #c2c2c2;
+        border-radius: 8px;
+        overflow: hidden;
+        background: #f5f6fa;
+      }
+
+      .search input {
+        flex: 1;
+        min-width: 0;
+        border: none;
+        outline: none;
+        padding: 0 18px;
+        background: transparent;
+        font-size: 14px;
+      }
+
+      .search i {
+        width: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #d71920;
+        color: #fff;
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+
+      .right-s1 {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .icons {
+        display: flex;
+        gap: 20px;
+        font-size: 20px;
+      }
+
+      .icons i {
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      .icons i:hover {
+        color: #d71920;
+      }
+
+      .money p:first-child {
+        font-size: 12px;
+        color: #777;
+      }
+
+      .money p:last-child {
+        font-weight: bold;
+        font-size: 14px;
+      }
+
+      /* =========================
+         NAVBAR
+      ========================= */
+
+      nav {
+        height: 45px;
+        background: #d71920;
+        padding: 0 115px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        color: #fff;
+        font-weight: 600;
+
+        position: sticky;
+        top: 0;
+        z-index: 2000;
+
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      nav > a {
+        color: #fff;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        white-space: nowrap;
+        transition:
+          background 0.3s ease,
+          color 0.3s ease;
+      }
+
+      nav > a:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff;
+      }
+
+      nav > a.active {
+        background: #fff;
+        color: #d71920 !important;
+        font-weight: 700;
+      }
+
+      /* =========================
+         MOBILE PRODUCTS
+      ========================= */
+
+      .mobile-products {
+        display: none;
+      }
+
+      .mobile-products-btn {
+        height: 45px;
+        width: 100%;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #fff;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .mobile-products-left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .mobile-products-btn > i {
+        transition: transform 0.3s ease;
+      }
+
+      .mobile-products.open .mobile-products-btn > i {
+        transform: rotate(180deg);
+      }
+
+      .mobile-products-menu {
+        display: none;
+        background: #fff;
+        width: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        border-top: 1px solid rgba(255, 255, 255, 0.25);
+      }
+
+      .mobile-products.open .mobile-products-menu {
+        display: block;
+      }
+
+      .mobile-products-menu a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #333;
+        text-decoration: none;
+        padding: 13px 18px;
+        border-bottom: 1px solid #eee;
+        background: #fff;
+        transition: 0.2s ease;
+      }
+
+      .mobile-products-menu a:hover,
+      .mobile-products-menu a.active {
+        background: #fde8e8;
+        color: #d71920;
+      }
+
+      .mobile-products-menu a i {
+        font-size: 13px;
+      }
+
+      /* =========================
+         CATEGORY BANNER
+      ========================= */
+
+      .category-banner {
+        background: #d71920;
+        color: #fff;
+        padding: 40px 115px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .category-icon {
+        width: 65px;
+        height: 65px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        flex-shrink: 0;
+      }
+
+      .category-title h1 {
+        font-size: 32px;
+        font-weight: bold;
+      }
+
+      .category-title p {
+        font-size: 14px;
+        opacity: 0.9;
+        margin-top: 4px;
+      }
+
+      /* =========================
+         MAIN CONTAINER
+      ========================= */
+
+      .container {
+        padding: 30px 115px;
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        gap: 30px;
+        align-items: start;
+      }
+
+      /* =========================
+         FILTER SIDEBAR
+      ========================= */
+
+      .filter-sidebar {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+        position: sticky;
+        top: 60px;
+
+        height: fit-content;
+      }
+
+      .filter-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: bold;
+        font-size: 16px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 20px;
+      }
+
+      .filter-group {
+        margin-bottom: 25px;
+      }
+
+      .filter-item {
+        display: flex;
+        align-items: center;
+        border-radius: 8px;
+        font-size: 14px;
+        cursor: pointer;
+        margin-bottom: 4px;
+        transition: all 0.3s ease;
+      }
+
+      .filter-item a {
+        display: block;
+        width: 100%;
+        padding: 10px 12px;
+        color: #555;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .filter-item:hover {
+        background: #f8f9fa;
+      }
+
+      .filter-item:hover a {
+        color: #d71920;
+      }
+
+      .filter-item.active {
+        background: #fde8e8;
+      }
+
+      .filter-item.active a {
+        color: #d71920 !important;
+        font-weight: bold;
+      }
+
+      /* =========================
+         PRODUCTS HEADER
+      ========================= */
+
+      .products-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        gap: 15px;
+      }
+
+      .showing-text {
+        color: #666;
+        font-size: 15px;
+      }
+
+      .view-options {
+        display: flex;
+        gap: 8px;
+      }
+
+      .view-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: #666;
+      }
+
+      .view-btn.active {
+        background: #d71920;
+        color: #fff;
+        border-color: #d71920;
+      }
+
+      /* =========================
+         PRODUCT GRID
+      ========================= */
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      /* =========================
+         PRODUCT CARD
+      ========================= */
+
+      .product-card {
+        background: rgb(227, 227, 227);
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid #eee;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+
+        display: flex;
+        flex-direction: column;
+
+        cursor: pointer;
+
+        min-width: 0;
+      }
+
+      .product-card:hover {
+        transform: translateY(-6px) !important;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      .product-img {
+        width: 100%;
+        height: 200px;
+        background: #f0f3f6;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .product-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+
+      .product-card:hover .product-img img {
+        transform: scale(1.08);
+      }
+
+      /* =========================
+         PRODUCT INFO
+      ========================= */
+
+      .product-info {
+        padding: 12px;
+
+        display: flex;
+        flex-direction: column;
+
+        flex: 1;
+        min-width: 0;
+      }
+
+      .product-category {
+        font-size: 12px;
+        color: #888;
+
+        min-height: 18px;
+      }
+
+      .product-name {
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 4px;
+        color: #222;
+        line-height: 1.4;
+
+        min-height: 40px;
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+
+        overflow: hidden;
+      }
+
+      /* =========================
+         RATING
+      ========================= */
+
+      .rating {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        font-size: 12px;
+        color: #e6a23c;
+
+        margin-top: 8px;
+
+        min-height: 18px;
+      }
+
+      .rating span {
+        color: #888;
+      }
+
+      /* =========================
+         PRICE + ACTIONS
+      ========================= */
+
+      .product-bottom {
+        margin-top: auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 8px;
+
+        min-height: 38px;
+        padding-top: 8px;
+      }
+
+      .product-bottom .price {
+        margin: 0;
+        padding: 0;
+
+        color: #d71920;
+        font-size: 16px;
+        font-weight: bold;
+
+        white-space: nowrap;
+        line-height: 1.2;
+
+        min-width: 0;
+      }
+
+      .product-bottom .price span {
+        color: #777;
+        font-size: 12px;
+        font-weight: normal;
+      }
+
+      /* =========================
+         ACTION BUTTONS
+      ========================= */
+
+      .product-actions {
+        display: flex;
+        align-items: center;
+
+        gap: 5px;
+
+        flex-shrink: 0;
+      }
+
+      .action-btn {
+        width: 30px;
+        height: 30px;
+
+        border-radius: 50%;
+
+        background: #fff;
+        border: 1px solid #e2e2e2;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: #666;
+        font-size: 13px;
+
+        cursor: pointer;
+
+        transition: all 0.2s ease;
+
+        flex-shrink: 0;
+      }
+
+      .action-btn:hover {
+        background: #d71920;
+        border-color: #d71920;
+        color: #fff;
+      }
+
+      /* =========================
+         FOOTER
+      ========================= */
+
+      footer {
+        background: #101827;
+        color: #fff;
+        margin-top: 50px;
+      }
+
+      .newsletter {
+        padding: 35px 115px;
+        border-bottom: 1px solid #293241;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        gap: 25px;
+      }
+
+      .newsletter h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .newsletter p {
+        color: #b8c2d3;
+      }
+
+      .subscribe {
+        display: flex;
+        gap: 10px;
+      }
+
+      .subscribe input {
+        width: 350px;
+        height: 48px;
+        padding: 0 18px;
+
+        border-radius: 12px;
+        border: 1px solid #596273;
+
+        background: #273142;
+        color: #fff;
+
+        outline: none;
+      }
+
+      .subscribe button {
+        height: 48px;
+
+        background: #ff7a00;
+        color: #fff;
+
+        border: none;
+
+        padding: 0 30px;
+
+        border-radius: 12px;
+
+        font-weight: bold;
+
+        cursor: pointer;
+      }
+
+      .footer-main {
+        padding: 55px 115px;
+
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+
+        gap: 50px;
+      }
+
+      .footer-logo img {
+        width: 200px;
+      }
+
+      .footer-logo p {
+        margin-top: 25px;
+        color: #b8c2d3;
+        line-height: 1.6;
+      }
+
+      .footer-col h3 {
+        margin-bottom: 25px;
+      }
+
+      .footer-col p {
+        color: #b8c2d3;
+        margin: 15px 0;
+        cursor: pointer;
+      }
+
+      .contact i {
+        color: #ff7a00;
+        margin-right: 12px;
+      }
+
+      .social {
+        display: flex;
+        gap: 15px;
+        margin-top: 25px;
+      }
+
+      .social i {
+        width: 40px;
+        height: 40px;
+
+        border-radius: 50%;
+
+        background: #273142;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 20px;
+
+        cursor: pointer;
+      }
+
+      /* =========================
+         1200px
+      ========================= */
+
+      @media (max-width: 1200px) {
+        header,
+        .section1,
+        nav,
+        .category-banner,
+        .container,
+        .newsletter,
+        .footer-main {
+          padding-left: 40px;
+          padding-right: 40px;
+        }
+
+        .product-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      /* =========================
+         900px
+      ========================= */
+
+      @media (max-width: 900px) {
+        .container {
+          grid-template-columns: 1fr;
+          padding: 20px;
+        }
+
+        .filter-sidebar {
+          position: relative;
+          top: 0;
+        }
+
+        .newsletter,
+        .footer-main {
+          padding: 30px 20px;
+        }
+
+        .newsletter {
+          flex-direction: column;
+          gap: 20px;
+          align-items: flex-start;
+        }
+
+        .footer-main {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .product-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      /* =========================
+         768px MOBILE
+      ========================= */
+
+      @media (max-width: 768px) {
+        header,
+        .section1,
+        .category-banner,
+        .container,
+        .newsletter,
+        .footer-main {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+
+        header {
+          font-size: 12px;
+        }
+
+        .section1 {
+          flex-direction: column;
+
+          min-height: auto;
+
+          padding-top: 15px;
+          padding-bottom: 15px;
+
+          gap: 15px;
+        }
+
+        .logo img {
+          width: 80px;
+        }
+
+        .search {
+          width: 100%;
+          max-width: none;
+        }
+
+        .right-s1 {
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        /* MOBILE NAV */
+
+        nav {
+          height: auto;
+          min-height: 45px;
+
+          padding: 0;
+
+          display: block;
+
+          overflow: visible;
+          white-space: normal;
+
+          background: #d71920;
+        }
+
+        nav > a {
+          display: none;
+        }
+
+        .mobile-products {
+          display: block;
+          width: 100%;
+
+          position: relative;
+        }
+
+        .mobile-products-btn {
+          display: flex;
+        }
+
+        .mobile-products-menu {
+          display: none;
+        }
+
+        .mobile-products.open .mobile-products-menu {
+          display: block;
+        }
+
+        /* CATEGORY */
+
+        .category-banner {
+          flex-direction: column;
+
+          text-align: center;
+
+          padding: 25px 15px;
+        }
+
+        .category-title h1 {
+          font-size: 24px;
+        }
+
+        /* PRODUCTS */
+
+        .product-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+
+          gap: 15px;
+        }
+
+        .product-img {
+          height: 190px;
+        }
+
+        .product-bottom {
+          align-items: center;
+        }
+
+        .product-bottom .price {
+          font-size: 15px;
+        }
+
+        .product-bottom .price span {
+          font-size: 11px;
+        }
+
+        .product-actions {
+          gap: 4px;
+        }
+
+        .action-btn {
+          width: 28px;
+          height: 28px;
+          font-size: 12px;
+        }
+
+        /* FOOTER */
+
+        .subscribe {
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .subscribe input {
+          width: 100%;
+        }
+
+        .subscribe button {
+          width: 100%;
+        }
+      }
+
+      /* =========================
+         600px
+      ========================= */
+
+      @media (max-width: 600px) {
+        .product-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .product-img {
+          height: 220px;
+        }
+
+        .product-name {
+          min-height: 40px;
+        }
+
+        .product-bottom .price {
+          font-size: 16px;
+        }
+
+        .action-btn {
+          width: 30px;
+          height: 30px;
+          font-size: 13px;
+        }
+      }
+
+      /* =========================
+         480px
+      ========================= */
+
+      @media (max-width: 480px) {
+        header {
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+
+        .section1 {
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+
+        .logo img {
+          width: 75px;
+        }
+
+        .icons {
+          gap: 15px;
+          font-size: 19px;
+        }
+
+        .money p:last-child {
+          font-size: 13px;
+        }
+
+        .category-banner {
+          padding: 22px 12px;
+        }
+
+        .category-icon {
+          width: 58px;
+          height: 58px;
+          font-size: 28px;
+        }
+
+        .category-title h1 {
+          font-size: 22px;
+        }
+
+        .container {
+          padding: 15px 12px;
+        }
+
+        .products-header {
+          align-items: center;
+        }
+
+        .showing-text {
+          font-size: 13px;
+        }
+
+        .view-btn {
+          width: 34px;
+          height: 34px;
+        }
+
+        .product-img {
+          height: 220px;
+        }
+      }
+
+      /* =========================
+         VERY SMALL MOBILE
+      ========================= */
+
+      @media (max-width: 360px) {
+        .product-bottom .price {
+          font-size: 14px;
+        }
+
+        .product-bottom .price span {
+          font-size: 10px;
+        }
+
+        .action-btn {
+          width: 27px;
+          height: 27px;
+          font-size: 11px;
+        }
+
+        .product-actions {
+          gap: 3px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+      <div>
+        <i class="bi bi-telephone"></i>
+        +855 99 456 459
+      </div>
+
+      <div class="lang-dropdown">
+        <div class="lang-btn">
+          <span>KH ភាសាខ្មែរ</span>
+          <i class="bi bi-chevron-down"></i>
+        </div>
+
+        <div class="lang-menu">
+          <a href="health.html" class="lang-item">US អង់គ្លេស</a>
+          <a href="health_kh.html" class="lang-item">KH ភាសាខ្មែរ</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- =========================
+         LOGO / SEARCH / CART
+    ========================= -->
+
+    <section class="section1">
+      <div class="logo">
+        <img src="Logo.png" alt="ឡូហ្គោ" />
+      </div>
+
+      <div class="search">
+        <input
+          type="text"
+          placeholder="ស្វែងរកទំនិញ..."
+          aria-label="ស្វែងរកផលិតផល"
+        />
+
+        <i class="bi bi-search"></i>
+      </div>
+
+      <div class="right-s1">
+        <div class="icons">
+          <i class="bi bi-heart"></i>
+          <i class="bi bi-person"></i>
+          <i class="bi bi-cart3"></i>
+        </div>
+
+        <div class="money">
+          <p>កន្ត្រកទំនិញរបស់ខ្ញុំ</p>
+          <p>$0.00</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav>
+      <a href="health.html" class="active">សុខភាព និង សម្រស់</a>
+      <a href="Fashion.html">ម៉ូដបុរស</a>
+      <a href="kictchen.html">ផ្ទះ និង ផ្ទះបាយ</a>
+      <a href="Food_drink.html">ម្ហូបអាហារ និង ភេសជ្ជៈ</a>
+      <a href="Contact.html">ទំនាក់ទំនង</a>
+
+      <!-- MOBILE PRODUCTS -->
+
+      <div class="mobile-products" id="mobileProducts">
+        <div class="mobile-products-btn" id="mobileProductsBtn">
+          <div class="mobile-products-left">
+            <i class="bi bi-grid"></i>
+            <span>ផលិតផល</span>
+          </div>
+
+          <i class="bi bi-chevron-down"></i>
+        </div>
+
+        <div class="mobile-products-menu">
+          <a href="health.html" class="active">
+            <span>សុខភាព និង សម្រស់</span>
+            <i class="bi bi-chevron-right"></i>
+          </a>
+
+          <a href="Fashion.html">
+            <span>ម៉ូដបុរស</span>
+            <i class="bi bi-chevron-right"></i>
+          </a>
+
+          <a href="kictchen.html">
+            <span>ផ្ទះ និង ផ្ទះបាយ</span>
+            <i class="bi bi-chevron-right"></i>
+          </a>
+
+          <a href="Food_drink.html">
+            <span>ម្ហូបអាហារ និង ភេសជ្ជៈ</span>
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- =========================
+         CATEGORY BANNER
+    ========================= -->
+
+    <div class="category-banner">
+      <div class="category-icon">
+        <i class="bi bi-box-seam"></i>
+      </div>
+
+      <div class="category-title">
+        <h1>សុខភាព និង សម្រស់</h1>
+        <p>ផលិតផលចំនួន ៧៤</p>
+      </div>
+    </div>
+
+    <!-- =========================
+         MAIN
+    ========================= -->
+
+    <div class="container">
+      <!-- FILTER -->
+
+      <aside class="filter-sidebar">
+        <div class="filter-title">
+          <i class="bi bi-sliders"></i>
+          តម្រៀបតាម
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-item active">
+            <a href="#medicine">ថ្នាំពេទ្យ</a>
+          </div>
+
+          <div class="filter-item">
+            <a href="#skin">ស្បែក</a>
+          </div>
+
+          <div class="filter-item">
+            <a href="#sup">អាហារបំប៉ន</a>
+          </div>
+
+          <div class="filter-item">
+            <a href="#or">ឱសថបុរាណ/ធម្មជាតិ</a>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-item">
+            <a style="color: #000" href="index_kh.html"> ទៅកាន់ទំព័រដើម </a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- PRODUCTS -->
+
+      <main>
+        <div class="products-header" data-aos="zoom-in-up">
+          <div class="showing-text">
+            កំពុងបង្ហាញ <strong>៣២</strong> នៃ <strong>៧៤</strong> ផលិតផល
+          </div>
+
+          <div class="view-options">
+            <button class="view-btn active" type="button">
+              <i class="bi bi-grid-fill"></i>
+            </button>
+
+            <button class="view-btn" type="button">
+              <i class="bi bi-list-ul"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="product-grid">
+          <!-- 1 -->
+
+          <div class="product-card" data-aos="zoom-in-up" id="medicine">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1775118004571-DSC03653.jpg"
+                alt="ថ្នាំដុសធ្មេញ ដែនដូវ៉ារ៉ា"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">សម្ភារអនាម័យ</div>
+
+              <div class="product-name">ថ្នាំដុសធ្មេញ Dentovera</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$15.00 <span>/ ប្រអប់</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn" title="មើលរហ័ស">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn" title="ដាក់ចូលកន្ត្រក">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn" title="ចំណាំទុក">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1775111639348-Hikari.Intermediate%20level.jpg"
+                alt="ប្រេង היקארי ឈុតពិសេស"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">ឱសថបុរាណ/ធម្មជាតិ</div>
+
+              <div class="product-name">
+                ឈុតប្រេង Hikari ពិសេស (កម្រិតមធ្យម)
+              </div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$35.00 <span>/ ឈុត</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn" title="មើលរហ័ស">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn" title="ដាក់ចូលកន្ត្រក">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn" title="ចំណាំទុក">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1775016876266-DSC00151.jpg"
+                alt="ឱសថធម្មជាតិ"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">ឱសថបុរាណ/ធម្មជាតិ</div>
+
+              <div class="product-name">
+                ឈុត ៦០ប្រអប់ ឈុតតាកាតា ឫសដូងបាត ក្រពះពោះវៀន
+              </div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$630.00 <span>/ ឈុត</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1775016246227-%C3%A1%C2%9E%C2%8F%C3%A1%C2%9E%C2%B6%C3%A1%C2%9E%C2%80%C3%A1%C2%9E%C2%B6%C3%A1%C2%9E%C2%8C%C3%A1%C2%9E%C2%B6%C3%A1%C2%9F%C2%A1%20(2).jpg"
+                alt="ឱសថធម្មជាតិ"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">ឱសថបុរាណ/ធម្មជាតិ</div>
+
+              <div class="product-name">ឈុត ៦០ប្រអប់ ឈុតតាកាតា ឯកទេសសសៃ</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$630.00 <span>/ ឈុត</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1775016563301-Ta-stom%20(1).jpg"
+                alt="ឈុត៦០ ប្រអប់"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">ឱសថបុរាណ/ធម្មជាតិ</div>
+
+              <div class="product-name">ឈុត៦០ ប្រអប់</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$420.00</div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1775016475715-Ta-ache%20(1).jpg"
+                alt="ឈុត ៦០ប្រអប់"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">ឱសថបុរាណ/ធម្មជាតិ</div>
+
+              <div class="product-name">ឈុត ៦០ប្រអប់</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$420.00 <span>/ ឈុត</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1775016323276-DSC00151.jpg"
+                alt="ឈុត ១២ប្រអប់"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">ឱសថបុរាណ/ធម្មជាតិ</div>
+
+              <div class="product-name">ឈុត ១២ប្រអប់</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$135.00 <span>/ ឈុត</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1775016246227-%C3%A1%C2%9E%C2%8F%C3%A1%C2%9E%C2%B6%C3%A1%C2%9E%C2%80%C3%A1%C2%9E%C2%B6%C3%A1%C2%9E%C2%8C%C3%A1%C2%9E%C2%B6%C3%A1%C2%9F%C2%A1%20(2).jpg"
+                alt="ឈុត ១២ប្រអប់"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">ឱសថបុរាណ/ធម្មជាតិ</div>
+
+              <div class="product-name">ឈុត ១២ប្រអប់ ឈុតតាកាតា ឯកទេសសសៃ</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>5.0</strong>
+                <span>(1)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$135.00 <span>/ ឈុត</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 9 -->
+
+          <div class="product-card" data-aos="zoom-in-up" id="skin">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1775185672741-IMG_4189.jpg"
+                alt="ម៉ាស្សាកាកបាយសាច់កាហ្វេ"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">ស្បែក</div>
+
+              <div class="product-name">ស្ក្រាប់កាហ្វេ (Coffee Scrub)</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$3.00 <span>/ កំប៉ុង</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 10 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1775185259452-IMG_4350.jpg"
+                alt="សាប៊ូដុំដូង អង្ករ និងស្រូវសាលី"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">ស្បែក</div>
+
+              <div class="product-name">សាប៊ូដុសខ្លួនដូង អង្ករ និងស្រូវសាលី (100g)</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$2.00 <span>/ ដុំ</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 11 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1777522043576-ST_KonYerng_Bottle.jpg"
+                alt="សាប៊ូកូនយើងពណ៌ខៀវ"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">សម្ភារអនាម័យ</div>
+
+              <div class="product-name">សាប៊ូកក់ និងដុសខ្លួនកូនយើង ពណ៌ខៀវ (900ml)</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$4.50 <span>/ ដប</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 12 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1775183141610-IMG_4227.jpg"
+                alt="សាប៊ូលាងប្រដាប់កាយធម្មជាតិ ST White"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">សម្ភារអនាម័យ</div>
+
+              <div class="product-name">
+                សាប៊ូលាងផ្នែកសំងាត់ធម្មជាតិ ST White (120ml)
+              </div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$3.75 <span>/ ដប</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 13 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1775182937372-IMG_4226.jpg"
+                alt="សាប៊ូលាងប្រដាប់កាយធម្មជាតិ ST White"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">សម្ភារអនាម័យ</div>
+
+              <div class="product-name">
+                សាប៊ូលាងផ្នែកសំងាត់ធម្មជាតិ ST White (120ml)
+              </div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$3.75 <span>/ ដប</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 14 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1775182096325-IMG_4356.jpg"
+                alt="សាប៊ូ ST White ៣ក្នុង១"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">សម្ភារអនាម័យ</div>
+
+              <div class="product-name">
+                សាប៊ូ ST White ៣ក្នុង១ (សាប៊ូកក់សក់ + ក្រែមខាប់ + ម៉ងតុលត្រជាក់)...
+              </div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$4.50 <span>/ ដប</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 15 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1775181696974-hair%20conditioning%20ST.jpg"
+                alt="ក្រែមខាប់ទន់សក់ ST White"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">សម្ភារអនាម័យ</div>
+
+              <div class="product-name">ក្រែមខាប់ទន់សក់ ST White (500ml)</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$4.75 <span>/ ដប</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 16 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1775180781818-shampoo%20ST%20white.jpg"
+                alt="សាប៊ូកក់សក់ប្រឆាំងអង្គែ ST White"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">សម្ភារអនាម័យ</div>
+
+              <div class="product-name">
+                សាប៊ូកក់សក់ប្រឆាំងអង្គែ និងការពារជ្រុះសក់ ST White (500 ម.ល)
+              </div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$3.75 <span>/ ដប</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 17 -->
+
+          <div class="product-card" data-aos="zoom-in-up" id="sup">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1779679539960-Gemini_Generated_Image_qe7zqrqe7zqrqe7z.jpg"
+                alt="ណាំវ៉ា វីតាហ្គ្រីន"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">សម្ភារអនាម័យ</div>
+
+              <div class="product-name">ណាំវ៉ា វីតាហ្គ្រីន (Namwa Vitagreen)</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$7.00 <span>/ ដប</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 18 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1778232956773-Porridge%203.jpg"
+                alt="បបរគ្រាប់ធញ្ញជាតិចម្រុះ"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">អាហារបំប៉ន</div>
+
+              <div class="product-name">បបរគ្រឿងទេសចម្រុះ</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$0.00 <span>/ ប្រអប់</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 19 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1778127252573-GY-nut%20powder.jpg"
+                alt="ប្រូតេអ៊ីនទ្រូងមាន់"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">អាហារបំប៉ន</div>
+
+              <div class="product-name">ប្រូតេអ៊ីនសាច់ទ្រូងមាន់</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$0.00 <span>/ ប្រអប់</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 20 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1778127252573-GY-nut%20powder.jpg"
+                alt="ម្សៅគ្រាប់ធញ្ញជាតិចម្រុះ"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">អាហារបំប៉ន</div>
+
+              <div class="product-name">ម្សៅគ្រាប់ធញ្ញជាតិចម្រុះ</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$12.00 <span>/ ប្រអប់</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 21 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1778124491108-GY-4in1.jpg"
+                alt="ម្សៅផ្លែបឺរចម្រុះ"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">អាហារបំប៉ន</div>
+
+              <div class="product-name">
+                ម្សៅបឺរ ចេក ការ៉ុត និងល្ពៅចម្រុះ
+              </div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$12.00 <span>/ ប្រអប់</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 22 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1778123790318-GY-3in1.jpg"
+                alt="ម្សៅផ្លែឈើចម្រុះ"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">អាហារបំប៉ន</div>
+
+              <div class="product-name">ម្សៅផ្លែឈើចម្រុះ (បឺរ, ចេក, ការ៉ុត)</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$12.00 <span>/ ប្រអប់</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 23 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1778123159730-GY-Avocado.jpg"
+                alt="ម្សៅផ្លែបឺរ"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">អាហារបំប៉ន</div>
+
+              <div class="product-name">ម្សៅផ្លែបឺរសុទ្ធ</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$12.00 <span>/ ប្រអប់</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 24 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1777522241031-ST_KonYerng_Bottle_Pink.jpg"
+                alt="សាប៊ูกូនយើងពណ៌ផ្កាឈូក"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">សម្ភារអនាម័យ</div>
+
+              <div class="product-name">សាប៊ូកូនយើងពណ៌ផ្កាឈូក 300ml</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>5.0</strong>
+                <span>(1)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$4.50 <span>/ ដប</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 25 -->
+
+          <div class="product-card" data-aos="zoom-in-up" id="or">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1779260375356-IMG_2681.jpg"
+                alt="សាប៊ូម៉ាលីផ្កាម្លិះ"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">ស្បែក</div>
+
+              <div class="product-name">សាប៊ូផ្កាម្លិះ (55g)</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>5.0</strong>
+                <span>(1)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$2.31 <span>/ ប្រអប់</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 26 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1779260398345-IMG_2684.jpg"
+                alt="សាប៊ូម៉ាលីផ្កាម្លិះ"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">ស្បែក</div>
+
+              <div class="product-name">សាប៊ូផ្កាម្លិះ (55g)</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>5.0</strong>
+                <span>(1)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$2.25 <span>/ ប្រអប់</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 27 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1776652152589-5%20ele%20small.jpg"
+                alt="ប្រេងខ្យល់ដំរី៥"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">ឱសថបុរាណ/ធម្មជាតិ</div>
+
+              <div class="product-name">ប្រេងខ្យល់ព្យាបាលដំរី៥ (8g)</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$25.00 <span>/ ប្រអប់</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 28 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1776651926455-5%20ele%20small.jpg"
+                alt="ប្រេងខ្យល់ដំរី៥"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">ស្បែក</div>
+
+              <div class="product-name">ប្រេងខ្យល់ព្យាបាលដំរី៥ (15g)</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$36.00 <span>/ ប្រអប់</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 29 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1776651443874-5%20ele%20small.jpg"
+                alt="ប្រេងខ្យល់ដំរី៥"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">ឱសថបុរាណ/ធម្មជាតិ</div>
+
+              <div class="product-name">ប្រេងខ្យល់ព្យាបាលដំរី៥ (50g)</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$45.00 <span>/ ប្រអប់</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 30 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1775545889577-exhaler.jpg"
+                alt="ប្រេងខ្យល់ធម្មជាតិដំរី៥"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">ឱសថបុរាណ/ធម្មជាតិ</div>
+
+              <div class="product-name">
+                ប្រេងខ្យល់ធម្មជាតិ សញ្ញាដំរី៥ (៨ម.ល)
+              </div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$25.00 <span>/ ប្រអប់</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 31 -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1775185903173-IMG_4188.jpg"
+                alt="ម៉ាស្សាកាកដូង"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">ស្បែក</div>
+
+              <div class="product-name">ស្ក្រាប់ដូង (Coconut Scrub)</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>0.0</strong>
+                <span>(0)</span>
+              </div>
+
+              <div class="product-bottom">
+                <div class="price">$3.50 <span>/ កំប៉ុង</span></div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+      <div class="newsletter">
+        <div>
+          <h2>ជាវប្រចាំដើម្បីទទួលបានព័ត៌មានថ្មីៗ</h2>
+          <p>ទទួលបានព័ត៌មានថ្មីៗអំពីផលិតផល និងការផ្តល់ជូនពិសេសៗ!</p>
+        </div>
+
+        <div class="subscribe">
+          <input type="email" placeholder="បញ្ចូលអ៊ីមែលរបស់អ្នក" />
+
+          <button type="button">ចុះឈ្មោះជាវ</button>
+        </div>
+      </div>
+
+      <div class="footer-main">
+        <div class="footer-logo">
+          <img src="Logo.png" alt="ឡូហ្គោ" />
+
+          <p>
+            ទីតាំងតែមួយគត់សម្រាប់រាល់តម្រូវការទិញទំនិញរបស់អ្នក។ ផលិតផលមានគុណភាពពីអ្នកលក់ដែលគួរឱ្យទុកចិត្ត។
+          </p>
+
+          <div class="social">
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-twitter"></i>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-youtube"></i>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>តំណរភ្ជាប់រហ័ស</h3>
+
+          <p>អំពីពួកយើង</p>
+          <p>ទំនាក់ទំនង</p>
+          <p>សំណួរញឹកញាប់</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>គណនីរបស់ខ្ញុំ</h3>
+
+          <p>ប្រវត្តិរូបរបស់ខ្ញុំ</p>
+          <p>ប្រវត្តិនៃការបញ្ជាទិញ</p>
+          <p>ទំនិញដែលបានចំណាំ</p>
+        </div>
+
+        <div class="footer-col contact">
+          <h3>ព័ត៌មានទំនាក់ទំនង</h3>
+
+          <p>
+            <i class="bi bi-geo-alt"></i>
+            ផ្ទះលេខ 1891 បុរីអាតវូដ, ផ្លូវ 110E, សង្កាត់ទឹកថ្លា, ខណ្ឌសែនសុខ, រាជធានីភ្នំពេញ
+          </p>
+
+          <p>
+            <i class="bi bi-telephone"></i>
+            +855 99 456 459
+          </p>
+
+          <p>
+            <i class="bi bi-envelope"></i>
+            bakseymarket@gmail.com
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =========================
+         AOS
+    ========================= -->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        /* =========================
+           AOS
+        ========================= */
+
+        AOS.init({
+          duration: 800,
+          once: false,
+          mirror: true,
+          offset: 80,
+        });
+
+        /* =========================
+           MOBILE PRODUCTS DROPDOWN
+        ========================= */
+
+        const products = document.getElementById("mobileProducts");
+
+        const productsBtn = document.getElementById("mobileProductsBtn");
+
+        if (products && productsBtn) {
+          productsBtn.addEventListener("click", function (event) {
+            event.stopPropagation();
+
+            products.classList.toggle("open");
+          });
+
+          document.addEventListener("click", function (event) {
+            if (!products.contains(event.target)) {
+              products.classList.remove("open");
+            }
+          });
+        }
+
+        /* =========================
+           FILTER ACTIVE
+        ========================= */
+
+        const filterItems = document.querySelectorAll(
+          ".filter-group .filter-item",
+        );
+
+        const sections = document.querySelectorAll(".product-grid > div[id]");
+
+        filterItems.forEach(function (item) {
+          const link = item.querySelector("a");
+
+          if (!link) return;
+
+          link.addEventListener("click", function () {
+            const href = this.getAttribute("href");
+
+            if (href && href.startsWith("#")) {
+              filterItems.forEach(function (i) {
+                i.classList.remove("active");
+              });
+
+              item.classList.add("active");
+            }
+          });
+        });
+
+        /* =========================
+           SCROLL FILTER ACTIVE
+        ========================= */
+
+        let ticking = false;
+
+        window.addEventListener(
+          "scroll",
+          function () {
+            if (!ticking) {
+              window.requestAnimationFrame(function () {
+                let currentSectionId = "";
+
+                const scrollPosition = window.scrollY + 220;
+
+                sections.forEach(function (section) {
+                  const sectionTop = section.offsetTop;
+
+                  if (scrollPosition >= sectionTop) {
+                    currentSectionId = section.getAttribute("id");
+                  }
+                });
+
+                if (currentSectionId) {
+                  filterItems.forEach(function (item) {
+                    const link = item.querySelector("a");
+
+                    if (
+                      link &&
+                      link.getAttribute("href") === "#" + currentSectionId
+                    ) {
+                      filterItems.forEach(function (i) {
+                        i.classList.remove("active");
+                      });
+
+                      item.classList.add("active");
+                    }
+                  });
+                }
+
+                ticking = false;
+              });
+
+              ticking = true;
+            }
+          },
+          { passive: true },
+        );
+      });
+    </script>
+  </body>
+</html>

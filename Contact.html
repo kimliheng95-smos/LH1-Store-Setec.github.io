@@ -1,0 +1,2292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>LH Store - Contact Us</title>
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@100..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS -->
+    <link
+      href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* =========================================================
+         GLOBAL
+      ========================================================= */
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 45px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Kantumruy Pro", sans-serif;
+      }
+
+      body {
+        background: #f7f8fa;
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      button,
+      input,
+      textarea {
+        font-family: inherit;
+      }
+
+      /* =========================================================
+         TOP HEADER
+      ========================================================= */
+
+      header {
+        height: 40px;
+        padding: 0 115px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        background: #fff;
+        border-bottom: 1px solid #ddd;
+
+        color: #68758a;
+        font-size: 14px;
+      }
+
+      .lang-dropdown {
+        position: relative;
+        cursor: pointer;
+      }
+
+      .lang-btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        padding: 4px 8px;
+        border-radius: 4px;
+
+        transition: 0.3s ease;
+      }
+
+      .lang-btn:hover {
+        background: #f0f0f0;
+      }
+
+      .lang-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+
+        min-width: 120px;
+
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 6px;
+
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+        display: none;
+        flex-direction: column;
+
+        z-index: 5000;
+        overflow: hidden;
+      }
+
+      .lang-dropdown:hover .lang-menu {
+        display: flex;
+      }
+
+      .lang-item {
+        padding: 8px 14px;
+
+        color: #333;
+        text-decoration: none;
+        font-size: 13px;
+
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .lang-item:hover {
+        background: #fde8e8;
+        color: #d71920;
+      }
+
+      /* =========================================================
+         SEARCH SECTION
+      ========================================================= */
+
+      .section1 {
+        min-height: 80px;
+
+        padding: 0 115px;
+
+        background: #fff;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 20px;
+      }
+
+      .logo {
+        flex-shrink: 0;
+      }
+
+      .logo img {
+        width: 80px;
+      }
+
+      .search {
+        width: 100%;
+        max-width: 680px;
+        height: 42px;
+
+        display: flex;
+
+        border: 1px solid #c2c2c2;
+        border-radius: 8px;
+
+        overflow: hidden;
+        background: #f5f6fa;
+      }
+
+      .search input {
+        flex: 1;
+        min-width: 0;
+
+        border: none;
+        outline: none;
+
+        padding: 0 18px;
+
+        background: transparent;
+        font-size: 14px;
+      }
+
+      .search i {
+        width: 45px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: #d71920;
+        color: #fff;
+
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+
+      .right-s1 {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        flex-shrink: 0;
+      }
+
+      .icons {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        font-size: 20px;
+      }
+
+      .icons i {
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      .icons i:hover {
+        color: #d71920;
+      }
+
+      .money p:first-child {
+        color: #777;
+        font-size: 12px;
+      }
+
+      .money p:last-child {
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      /* =========================================================
+         NAVBAR
+      ========================================================= */
+
+      nav {
+        height: 45px;
+
+        padding: 0 115px;
+
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        background: #d71920;
+        color: #fff;
+
+        font-weight: 600;
+
+        position: sticky;
+        top: 0;
+        z-index: 3000;
+
+        overflow-x: auto;
+        white-space: nowrap;
+
+        -webkit-overflow-scrolling: touch;
+      }
+
+      nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      nav > a {
+        color: #fff;
+        text-decoration: none;
+
+        padding: 8px 16px;
+
+        border-radius: 6px;
+
+        white-space: nowrap;
+
+        transition:
+          background 0.3s ease,
+          color 0.3s ease;
+      }
+
+      nav > a:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff;
+      }
+
+      nav > a.active {
+        background: #fff;
+        color: #d71920 !important;
+        font-weight: 700;
+      }
+
+      /* =========================================================
+         MOBILE PRODUCTS DROPDOWN
+      ========================================================= */
+
+      .mobile-products {
+        display: none;
+      }
+
+      .mobile-products-btn {
+        height: 45px;
+        width: 100%;
+
+        padding: 0 15px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        color: #fff;
+
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .mobile-products-left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .mobile-products-btn > i {
+        transition: transform 0.3s ease;
+      }
+
+      .mobile-products.open .mobile-products-btn > i {
+        transform: rotate(180deg);
+      }
+
+      .mobile-products-menu {
+        display: none;
+
+        width: 100%;
+
+        background: #fff;
+
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+        border-top: 1px solid rgba(255, 255, 255, 0.25);
+      }
+
+      .mobile-products.open .mobile-products-menu {
+        display: block;
+      }
+
+      .mobile-products-menu a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 13px 18px;
+
+        color: #333;
+        text-decoration: none;
+
+        background: #fff;
+
+        border-bottom: 1px solid #eee;
+
+        transition: 0.2s ease;
+      }
+
+      .mobile-products-menu a:hover {
+        background: #fde8e8;
+        color: #d71920;
+      }
+
+      .mobile-products-menu a.active {
+        background: #fde8e8;
+        color: #d71920;
+        font-weight: 700;
+      }
+
+      /* =========================================================
+         CATEGORY BANNER
+      ========================================================= */
+
+      .category-banner {
+        padding: 40px 115px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 20px;
+
+        background: #d71920;
+        color: #fff;
+      }
+
+      .c {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .category-icon {
+        width: 65px;
+        height: 65px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: rgba(255, 255, 255, 0.2);
+
+        border-radius: 12px;
+
+        font-size: 32px;
+
+        flex-shrink: 0;
+      }
+
+      .category-icon a {
+        color: #fff;
+        text-decoration: none;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .category-title h1 {
+        font-size: 32px;
+        font-weight: bold;
+      }
+
+      .category-title p {
+        margin-top: 4px;
+
+        font-size: 14px;
+        opacity: 0.9;
+      }
+
+      /* =========================================================
+         MAIN
+      ========================================================= */
+
+      .main-container {
+        padding: 40px 115px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 30px;
+      }
+
+      .school-logo-box {
+        margin: 0 auto 20px auto;
+
+        text-align: center;
+      }
+
+      .school-logo-box img {
+        height: 70px;
+        object-fit: contain;
+      }
+
+      /* =========================================================
+         STUDENT / TEACHER CARDS
+      ========================================================= */
+
+      .cards-wrapper {
+        width: 100%;
+        max-width: 1000px;
+
+        margin: 0 auto;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        gap: 30px;
+      }
+
+      .student-info-card {
+        padding: 30px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        background: #fff;
+
+        border: 1px solid #eee;
+        border-radius: 16px;
+
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+
+        text-align: center;
+      }
+
+      .student-info-card h2 {
+        width: 100%;
+
+        margin-bottom: 20px;
+        padding-bottom: 8px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 8px;
+
+        color: #d71920;
+
+        font-size: 18px;
+
+        border-bottom: 2px solid #fde8e8;
+      }
+
+      .profile-img-large {
+        width: 100%;
+        height: 320px;
+
+        margin-bottom: 15px;
+
+        object-fit: cover;
+
+        border: 3px solid #d71920;
+        border-radius: 12px;
+
+        box-shadow: 0 4px 10px rgba(215, 25, 32, 0.15);
+      }
+
+      .profile-role {
+        color: #d71920;
+
+        font-size: 13px;
+        font-weight: 600;
+
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .profile-name {
+        margin-top: 4px;
+        margin-bottom: 15px;
+
+        color: #222;
+
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .student-detail-list {
+        width: 100%;
+
+        margin-bottom: 20px;
+        padding: 15px 20px;
+
+        background: #fdfdfd;
+
+        border: 1px solid #f0f0f0;
+        border-radius: 10px;
+
+        text-align: center;
+      }
+
+      .student-detail-list p {
+        margin-top: 6px;
+
+        color: #444;
+
+        font-size: 14px;
+      }
+
+      .student-detail-list p:first-child {
+        margin-top: 0;
+      }
+
+      .card-socials {
+        margin-top: auto;
+
+        display: flex;
+        justify-content: center;
+
+        gap: 12px;
+      }
+
+      .card-socials a {
+        width: 42px;
+        height: 42px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: #f5f6fa;
+
+        border: 1px solid #eee;
+        border-radius: 50%;
+
+        color: #444;
+
+        font-size: 18px;
+
+        text-decoration: none;
+
+        transition: 0.3s ease;
+      }
+
+      .card-socials a:hover {
+        background: #d71920;
+        color: #fff;
+
+        transform: translateY(-3px);
+
+        box-shadow: 0 4px 8px rgba(215, 25, 32, 0.2);
+      }
+
+      /* =========================================================
+         BOTTOM CONTACT
+      ========================================================= */
+
+      .bottom-grid {
+        display: grid;
+
+        grid-template-columns: 1fr 1.5fr;
+
+        gap: 30px;
+      }
+
+      .contact-info-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        gap: 20px;
+      }
+
+      .info-card {
+        padding: 24px;
+
+        display: flex;
+        align-items: flex-start;
+
+        gap: 20px;
+
+        background: #fff;
+
+        border: 1px solid #eee;
+        border-radius: 12px;
+
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      }
+
+      .info-icon {
+        width: 50px;
+        height: 50px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: #fde8e8;
+        color: #d71920;
+
+        border-radius: 10px;
+
+        font-size: 22px;
+
+        flex-shrink: 0;
+      }
+
+      .info-text h3 {
+        margin-bottom: 6px;
+
+        color: #222;
+
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .info-text p {
+        color: #666;
+
+        font-size: 14px;
+
+        line-height: 1.5;
+      }
+
+      /* =========================================================
+         CONTACT FORM
+      ========================================================= */
+
+      .contact-form-card {
+        padding: 30px;
+
+        background: #fff;
+
+        border: 1px solid #eee;
+        border-radius: 12px;
+
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      }
+
+      .contact-form-card h2 {
+        margin-bottom: 8px;
+
+        color: #222;
+
+        font-size: 22px;
+      }
+
+      .contact-form-card > p {
+        margin-bottom: 25px;
+
+        color: #666;
+
+        font-size: 14px;
+      }
+
+      .form-grid {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 15px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 6px;
+      }
+
+      .form-group.full-width {
+        grid-column: span 2;
+      }
+
+      .form-group label {
+        color: #444;
+
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+
+        padding: 12px 16px;
+
+        background: #fdfdfd;
+
+        border: 1px solid #ddd;
+        border-radius: 8px;
+
+        outline: none;
+
+        font-size: 14px;
+
+        transition: 0.2s;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        background: #fff;
+
+        border-color: #d71920;
+      }
+
+      .form-group textarea {
+        height: 120px;
+
+        resize: none;
+      }
+
+      .btn-submit {
+        padding: 12px 30px;
+
+        background: #d71920;
+        color: #fff;
+
+        border: none;
+        border-radius: 8px;
+
+        font-size: 14px;
+        font-weight: bold;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+      }
+
+      .btn-submit:hover {
+        background: #b51218;
+      }
+
+      /* =========================================================
+         MAP
+      ========================================================= */
+
+      .map-container {
+        padding: 0 115px 40px 115px;
+      }
+
+      .map-wrapper {
+        overflow: hidden;
+
+        background: #fff;
+
+        border: 1px solid #eee;
+        border-radius: 12px;
+
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      }
+
+      .map-wrapper iframe {
+        width: 100%;
+        height: 350px;
+
+        display: block;
+
+        border: 0;
+      }
+
+      /* =========================================================
+         FOOTER
+      ========================================================= */
+
+      footer {
+        margin-top: 50px;
+
+        background: #101827;
+        color: #fff;
+      }
+
+      .newsletter {
+        padding: 35px 115px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 25px;
+
+        border-bottom: 1px solid #293241;
+      }
+
+      .newsletter h2 {
+        margin-bottom: 10px;
+
+        font-size: 24px;
+      }
+
+      .newsletter p {
+        color: #b8c2d3;
+      }
+
+      .subscribe {
+        display: flex;
+
+        gap: 10px;
+      }
+
+      .subscribe input {
+        width: 350px;
+        height: 48px;
+
+        padding: 0 18px;
+
+        background: #273142;
+        color: #fff;
+
+        border: 1px solid #596273;
+        border-radius: 12px;
+
+        outline: none;
+      }
+
+      .subscribe button {
+        height: 48px;
+
+        padding: 0 30px;
+
+        background: #ff7a00;
+        color: #fff;
+
+        border: none;
+        border-radius: 12px;
+
+        font-weight: bold;
+
+        cursor: pointer;
+      }
+
+      .footer-main {
+        padding: 55px 115px;
+
+        display: grid;
+
+        grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+
+        gap: 50px;
+      }
+
+      .footer-logo img {
+        width: 200px;
+      }
+
+      .footer-logo p {
+        margin-top: 25px;
+
+        color: #b8c2d3;
+
+        line-height: 1.6;
+      }
+
+      .footer-col h3 {
+        margin-bottom: 25px;
+      }
+
+      .footer-col p {
+        margin: 15px 0;
+
+        color: #b8c2d3;
+
+        cursor: pointer;
+      }
+
+      .contact i {
+        margin-right: 12px;
+
+        color: #ff7a00;
+      }
+
+      .social {
+        margin-top: 25px;
+
+        display: flex;
+
+        gap: 15px;
+      }
+
+      .social i {
+        width: 40px;
+        height: 40px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: #273142;
+
+        border-radius: 50%;
+
+        font-size: 20px;
+
+        cursor: pointer;
+      }
+
+      /* =========================================================
+         1200px
+      ========================================================= */
+
+      @media (max-width: 1200px) {
+        header,
+        .section1,
+        nav,
+        .category-banner,
+        .main-container,
+        .map-container,
+        .newsletter,
+        .footer-main {
+          padding-left: 40px;
+          padding-right: 40px;
+        }
+      }
+
+      /* =========================================================
+         992px
+      ========================================================= */
+
+      @media (max-width: 992px) {
+        .cards-wrapper {
+          grid-template-columns: 1fr;
+        }
+
+        .bottom-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-main {
+          grid-template-columns: 1.5fr 1fr 1fr;
+          gap: 30px;
+        }
+      }
+
+      /* =========================================================
+         768px
+      ========================================================= */
+
+      @media (max-width: 768px) {
+        /* HEADER */
+
+        header {
+          height: 38px;
+
+          padding-left: 15px;
+          padding-right: 15px;
+
+          font-size: 12px;
+        }
+
+        /* SEARCH */
+
+        .section1 {
+          min-height: auto;
+
+          padding: 15px;
+
+          flex-direction: column;
+
+          gap: 15px;
+        }
+
+        .logo img {
+          width: 80px;
+        }
+
+        .search {
+          width: 100%;
+          max-width: none;
+          height: 42px;
+        }
+
+        .right-s1 {
+          width: 100%;
+
+          justify-content: space-between;
+        }
+
+        .icons {
+          gap: 18px;
+          font-size: 20px;
+        }
+
+        /* NAVBAR */
+
+        nav {
+          height: auto;
+          min-height: 45px;
+
+          padding: 0;
+
+          display: block;
+
+          overflow: visible;
+          white-space: normal;
+
+          position: sticky;
+          top: 0;
+          z-index: 3000;
+        }
+
+        nav > a {
+          display: none;
+        }
+
+        .mobile-products {
+          display: block;
+
+          width: 100%;
+
+          position: relative;
+        }
+
+        .mobile-products-btn {
+          height: 45px;
+        }
+
+        /* CATEGORY */
+
+        .category-banner {
+          padding: 25px 15px;
+
+          flex-direction: column;
+
+          text-align: center;
+
+          gap: 20px;
+        }
+
+        .c {
+          width: 100%;
+
+          justify-content: center;
+
+          flex-direction: column;
+
+          text-align: center;
+        }
+
+        .category-icon {
+          width: 60px;
+          height: 60px;
+
+          font-size: 29px;
+        }
+
+        .category-title h1 {
+          font-size: 24px;
+        }
+
+        .category-title p {
+          font-size: 13px;
+        }
+
+        /* MAIN */
+
+        .main-container {
+          padding: 30px 15px;
+
+          gap: 25px;
+        }
+
+        .school-logo-box {
+          margin-bottom: 10px;
+        }
+
+        .school-logo-box img {
+          height: 60px;
+        }
+
+        .cards-wrapper {
+          grid-template-columns: 1fr;
+
+          gap: 20px;
+        }
+
+        .student-info-card {
+          padding: 20px;
+        }
+
+        .profile-img-large {
+          height: 280px;
+        }
+
+        /* BOTTOM */
+
+        .bottom-grid {
+          grid-template-columns: 1fr;
+
+          gap: 20px;
+        }
+
+        .info-card {
+          padding: 20px;
+
+          gap: 15px;
+        }
+
+        .contact-form-card {
+          padding: 20px;
+        }
+
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .form-group.full-width {
+          grid-column: span 1;
+        }
+
+        /* MAP */
+
+        .map-container {
+          padding: 0 15px 30px;
+        }
+
+        .map-wrapper iframe {
+          height: 300px;
+        }
+
+        /* FOOTER */
+
+        .newsletter {
+          padding: 30px 15px;
+
+          flex-direction: column;
+
+          align-items: flex-start;
+
+          gap: 20px;
+        }
+
+        .subscribe {
+          width: 100%;
+
+          flex-direction: column;
+        }
+
+        .subscribe input,
+        .subscribe button {
+          width: 100%;
+        }
+
+        .footer-main {
+          padding: 40px 15px;
+
+          grid-template-columns: 1fr 1fr;
+
+          gap: 30px;
+        }
+      }
+
+      /* =========================================================
+         600px
+      ========================================================= */
+
+      @media (max-width: 600px) {
+        .category-banner {
+          padding: 22px 12px;
+        }
+
+        .category-icon {
+          width: 56px;
+          height: 56px;
+
+          font-size: 27px;
+        }
+
+        .category-title h1 {
+          font-size: 22px;
+        }
+
+        .main-container {
+          padding: 25px 12px;
+        }
+
+        .student-info-card {
+          padding: 18px;
+        }
+
+        .student-info-card h2 {
+          font-size: 16px;
+        }
+
+        .profile-img-large {
+          height: 250px;
+        }
+
+        .profile-name {
+          font-size: 17px;
+        }
+
+        .student-detail-list {
+          padding: 13px 12px;
+        }
+
+        .student-detail-list p {
+          font-size: 13px;
+        }
+
+        .info-card {
+          padding: 18px;
+        }
+
+        .info-icon {
+          width: 45px;
+          height: 45px;
+
+          font-size: 20px;
+        }
+
+        .info-text h3 {
+          font-size: 15px;
+        }
+
+        .info-text p {
+          font-size: 13px;
+        }
+
+        .contact-form-card {
+          padding: 18px;
+        }
+
+        .contact-form-card h2 {
+          font-size: 20px;
+        }
+
+        .map-container {
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+
+        .footer-main {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* =========================================================
+         480px
+      ========================================================= */
+
+      @media (max-width: 480px) {
+        header {
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+
+        .section1 {
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+
+        .logo img {
+          width: 75px;
+        }
+
+        .icons {
+          gap: 14px;
+          font-size: 19px;
+        }
+
+        .money p:last-child {
+          font-size: 13px;
+        }
+
+        .mobile-products-btn {
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+
+        .mobile-products-menu a {
+          padding: 12px 15px;
+        }
+
+        .category-banner {
+          padding: 20px 12px;
+        }
+
+        .category-title h1 {
+          font-size: 21px;
+        }
+
+        .category-title p {
+          font-size: 12px;
+        }
+
+        .main-container {
+          padding: 20px 12px;
+        }
+
+        .school-logo-box img {
+          height: 55px;
+        }
+
+        .student-info-card {
+          padding: 15px;
+          border-radius: 12px;
+        }
+
+        .profile-img-large {
+          height: 220px;
+        }
+
+        .card-socials {
+          gap: 9px;
+        }
+
+        .card-socials a {
+          width: 38px;
+          height: 38px;
+
+          font-size: 16px;
+        }
+
+        .info-card {
+          padding: 15px;
+        }
+
+        .info-icon {
+          width: 42px;
+          height: 42px;
+
+          font-size: 18px;
+        }
+
+        .contact-form-card {
+          padding: 15px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+          padding: 11px 13px;
+        }
+
+        .btn-submit {
+          width: 100%;
+        }
+
+        .map-container {
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+
+        .map-wrapper iframe {
+          height: 260px;
+        }
+      }
+
+      /* =========================================================
+         360px
+      ========================================================= */
+
+      @media (max-width: 360px) {
+        header {
+          font-size: 11px;
+        }
+
+        .icons {
+          gap: 11px;
+          font-size: 18px;
+        }
+
+        .money p:first-child {
+          font-size: 10px;
+        }
+
+        .money p:last-child {
+          font-size: 12px;
+        }
+
+        .category-icon {
+          width: 52px;
+          height: 52px;
+
+          font-size: 24px;
+        }
+
+        .category-title h1 {
+          font-size: 19px;
+        }
+
+        .category-title p {
+          font-size: 11px;
+        }
+
+        .student-info-card {
+          padding: 12px;
+        }
+
+        .profile-img-large {
+          height: 190px;
+        }
+
+        .student-detail-list p {
+          font-size: 12px;
+        }
+
+        .info-card {
+          gap: 10px;
+        }
+
+        .info-icon {
+          width: 38px;
+          height: 38px;
+
+          font-size: 16px;
+        }
+
+        .info-text h3 {
+          font-size: 14px;
+        }
+
+        .info-text p {
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- =========================================================
+         TOP HEADER
+    ========================================================= -->
+
+    <header>
+      <div>
+        <i class="bi bi-telephone"></i>
+        +855 99 456 459
+      </div>
+
+      <div class="lang-dropdown">
+        <div class="lang-btn">
+          <span>US English</span>
+          <i class="bi bi-chevron-down"></i>
+        </div>
+
+        <div class="lang-menu">
+          <a href="Contact.html" class="lang-item">
+            US English
+          </a>
+
+          <a href="contact_kh.html" class="lang-item">
+            KH Khmer
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- =========================================================
+         SEARCH
+    ========================================================= -->
+
+    <section class="section1">
+
+      <div class="logo">
+        <img src="Logo.png" alt="Logo" />
+      </div>
+
+      <div class="search">
+        <input
+          type="text"
+          placeholder="Search for items..."
+        />
+
+        <i class="bi bi-search"></i>
+      </div>
+
+      <div class="right-s1">
+
+        <div class="icons">
+          <i class="bi bi-heart"></i>
+          <i class="bi bi-person"></i>
+          <i class="bi bi-cart3"></i>
+        </div>
+
+        <div class="money">
+          <p>My cart</p>
+          <p>$0.00</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================================================
+         NAVBAR
+         DESKTOP = NORMAL MENU
+         MOBILE = PRODUCTS DROPDOWN
+         ONLY NAVBAR IS STICKY
+    ========================================================= -->
+
+    <nav>
+
+      <!-- DESKTOP -->
+
+      <a href="health.html">
+        Health & Beauty
+      </a>
+
+      <a href="Fashion.html">
+        Men's Fashion
+      </a>
+
+      <a href="kictchen.html">
+        Home & Kitchen
+      </a>
+
+      <a href="Food_drink.html">
+        Food and Drinks
+      </a>
+
+      <a href="Contact.html" class="active">
+        Contact
+      </a>
+
+      <!-- MOBILE -->
+
+      <div class="mobile-products">
+
+        <div class="mobile-products-btn">
+
+          <div class="mobile-products-left">
+            <i class="bi bi-grid"></i>
+            <span>Products</span>
+          </div>
+
+          <i class="bi bi-chevron-down"></i>
+
+        </div>
+
+        <div class="mobile-products-menu">
+
+          <a href="health.html">
+            <span>Health & Beauty</span>
+            <i class="bi bi-chevron-right"></i>
+          </a>
+
+          <a href="Fashion.html">
+            <span>Men's Fashion</span>
+            <i class="bi bi-chevron-right"></i>
+          </a>
+
+          <a href="kictchen.html">
+            <span>Home & Kitchen</span>
+            <i class="bi bi-chevron-right"></i>
+          </a>
+
+          <a href="Food_drink.html">
+            <span>Food and Drinks</span>
+            <i class="bi bi-chevron-right"></i>
+          </a>
+
+          <!-- ACTIVE CONTACT -->
+
+          <a href="Contact.html" class="active">
+            <span>Contact</span>
+            <i class="bi bi-chevron-right"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </nav>
+
+    <!-- =========================================================
+         CATEGORY BANNER
+    ========================================================= -->
+
+    <div class="category-banner">
+
+      <div class="c">
+
+        <div class="category-icon">
+          <i class="bi bi-envelope-paper"></i>
+        </div>
+
+        <div class="category-title">
+          <h1>Contact Us</h1>
+
+          <p>
+            We are here to support and answer all your questions!
+          </p>
+        </div>
+
+      </div>
+
+      <div class="c">
+
+        <div class="category-icon">
+          <a href="index.html">
+            <i class="bi bi-house"></i>
+          </a>
+        </div>
+
+        <div class="category-title">
+          <h1>Go To Home Page</h1>
+
+          <p>
+            Thank You!!!
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- =========================================================
+         MAIN
+    ========================================================= -->
+
+    <div class="main-container">
+
+      <!-- SETEC LOGO -->
+
+      <div class="school-logo-box">
+        <img
+          src="SETEC LOGO PNG.png"
+          alt="SETEC Institute Logo"
+        />
+      </div>
+
+      <!-- =======================================================
+           STUDENT / TEACHER
+      ======================================================= -->
+
+      <div
+        class="cards-wrapper"
+        data-aos="zoom-in-up"
+      >
+
+        <!-- STUDENT -->
+
+        <div class="student-info-card">
+
+          <h2>
+            <i class="bi bi-mortarboard"></i>
+            Student Information
+          </h2>
+
+          <img
+            src="Heng.jpg"
+            alt="Student"
+            class="profile-img-large"
+          />
+
+          <span class="profile-role">
+            Student's name
+          </span>
+
+          <span class="profile-name">
+            Kim Liheng
+          </span>
+
+          <div class="student-detail-list">
+
+            <p>
+              <strong>Year:</strong>
+              1
+            </p>
+
+            <p>
+              <strong>Class:</strong>
+              SX11
+            </p>
+
+            <p>
+              <strong>Subject:</strong>
+              Web Development I
+            </p>
+
+            <p>
+              <strong>Project:</strong>
+              LH Store E-Commerce
+            </p>
+
+          </div>
+
+          <div class="card-socials">
+
+            <a
+              href="https://www.facebook.com/KimLiheng.77/?_rdc=2&_rdr#"
+              target="_blank"
+              title="Facebook"
+            >
+              <i class="bi bi-facebook"></i>
+            </a>
+
+            <a
+              href="https://www.tiktok.com/@hengg899?_r=1&_t=ZS-98g6Xy7UHEW"
+              target="_blank"
+              title="TikTok"
+            >
+              <i class="bi bi-tiktok"></i>
+            </a>
+
+            <a
+              href="https://t.me//Heng77777"
+              target="_blank"
+              title="Telegram"
+            >
+              <i class="bi bi-telegram"></i>
+            </a>
+
+            <a
+              href="https://www.instagram.com/lihengkim?igsh=MTlzbnJmNTVnemtvZw%3D%3D&utm_source=qr"
+              target="_blank"
+              title="Instagram"
+            >
+              <i class="bi bi-instagram"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- TEACHER -->
+
+        <div class="student-info-card">
+
+          <h2>
+            <i class="bi bi-person-badge"></i>
+            Teacher Information
+          </h2>
+
+          <img
+            src="Teacher.jpg"
+            alt="Teacher"
+            class="profile-img-large"
+          />
+
+          <span class="profile-role">
+            Teacher's name
+          </span>
+
+          <span class="profile-name">
+            Ry Visan
+          </span>
+
+          <div class="student-detail-list">
+
+            <p>
+              <strong>Role:</strong>
+              Project Supervisor
+            </p>
+
+            <p>
+              <strong>Department:</strong>
+              Web Development I
+            </p>
+
+            <p>
+              <strong>Subject:</strong>
+              Web Development I
+            </p>
+
+            <p>
+              <strong>Institute:</strong>
+              SETEC Institute
+            </p>
+
+          </div>
+
+          <div class="card-socials">
+
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              title="Facebook"
+            >
+              <i class="bi bi-facebook"></i>
+            </a>
+
+            <a
+              href="https://tiktok.com"
+              target="_blank"
+              title="TikTok"
+            >
+              <i class="bi bi-tiktok"></i>
+            </a>
+
+            <a
+              href="https://telegram.org"
+              target="_blank"
+              title="Telegram"
+            >
+              <i class="bi bi-telegram"></i>
+            </a>
+
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              title="Instagram"
+            >
+              <i class="bi bi-instagram"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- =======================================================
+           CONTACT INFORMATION + FORM
+      ======================================================= -->
+
+      <div
+        class="bottom-grid"
+        data-aos="zoom-in-up"
+      >
+
+        <!-- CONTACT INFO -->
+
+        <div class="contact-info-wrapper">
+
+          <div class="info-card">
+
+            <div class="info-icon">
+              <i class="bi bi-geo-alt"></i>
+            </div>
+
+            <div class="info-text">
+
+              <h3>
+                Our Address
+              </h3>
+
+              <p>
+                #1891 Borey Atwood, Street 110E,
+                Sangkat O'Bek Kaom, Khan Sen Sok,
+                Phnom Penh, Cambodia
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="info-card">
+
+            <div class="info-icon">
+              <i class="bi bi-telephone"></i>
+            </div>
+
+            <div class="info-text">
+
+              <h3>
+                Phone Number
+              </h3>
+
+              <p>
+                +855 85 20 7542
+              </p>
+
+              <p>
+                +855 12 345 678
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="info-card">
+
+            <div class="info-icon">
+              <i class="bi bi-envelope"></i>
+            </div>
+
+            <div class="info-text">
+
+              <h3>
+                Email Address
+              </h3>
+
+              <p>
+                kimliheng95@gmail.com
+              </p>
+
+              <p>
+                support@liheng.com
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="info-card">
+
+            <div class="info-icon">
+              <i class="bi bi-clock"></i>
+            </div>
+
+            <div class="info-text">
+
+              <h3>
+                Working Hours
+              </h3>
+
+              <p>
+                Monday - Sunday:
+                8:00 AM - 8:00 PM
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- FORM -->
+
+        <div class="contact-form-card">
+
+          <h2>
+            Send Us a Message
+          </h2>
+
+          <p>
+            Feel free to contact us anytime.
+            We will get back to you as soon as possible.
+          </p>
+
+          <form action="#">
+
+            <div class="form-grid">
+
+              <div class="form-group">
+
+                <label>
+                  First Name
+                </label>
+
+                <input
+                  type="text"
+                  placeholder="Enter first name"
+                  required
+                />
+
+              </div>
+
+              <div class="form-group">
+
+                <label>
+                  Last Name
+                </label>
+
+                <input
+                  type="text"
+                  placeholder="Enter last name"
+                  required
+                />
+
+              </div>
+
+              <div class="form-group">
+
+                <label>
+                  Email Address
+                </label>
+
+                <input
+                  type="email"
+                  placeholder="Enter email address"
+                  required
+                />
+
+              </div>
+
+              <div class="form-group">
+
+                <label>
+                  Phone Number
+                </label>
+
+                <input
+                  type="tel"
+                  placeholder="Enter phone number"
+                />
+
+              </div>
+
+              <div class="form-group full-width">
+
+                <label>
+                  Subject
+                </label>
+
+                <input
+                  type="text"
+                  placeholder="Enter subject"
+                  required
+                />
+
+              </div>
+
+              <div class="form-group full-width">
+
+                <label>
+                  Message
+                </label>
+
+                <textarea
+                  placeholder="Write your message here..."
+                  required
+                ></textarea>
+
+              </div>
+
+            </div>
+
+            <button
+              type="submit"
+              class="btn-submit"
+            >
+              Send Message
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- =========================================================
+         MAP
+    ========================================================= -->
+
+    <div
+      class="map-container"
+      data-aos="zoom-in-up"
+    >
+
+      <div class="map-wrapper">
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.774218828236!2d104.8723933!3d11.568019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951a37c8bf083%3A0xe10ff3d527189f71!2sPhnom%20Penh!5e0!3m2!1sen!2skh!4v1700000000000!5m2!1sen!2skh"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+
+      </div>
+
+    </div>
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer>
+
+      <div class="newsletter">
+
+        <div>
+
+          <h2>
+            Subscribe to Our Newsletter
+          </h2>
+
+          <p>
+            Get updates on new products and exclusive offers!
+          </p>
+
+        </div>
+
+        <div class="subscribe">
+
+          <input
+            type="email"
+            placeholder="Enter your email"
+          />
+
+          <button>
+            Subscribe
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="footer-main">
+
+        <div class="footer-logo">
+
+          <img
+            src="Logo.png"
+            alt="Logo"
+          />
+
+          <p>
+            Your one-stop destination for all your shopping needs.
+            Quality products from trusted vendors.
+          </p>
+
+          <div class="social">
+
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-twitter"></i>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-youtube"></i>
+
+          </div>
+
+        </div>
+
+        <div class="footer-col">
+
+          <h3>
+            Quick Links
+          </h3>
+
+          <p>
+            About Us
+          </p>
+
+          <p>
+            Contact Us
+          </p>
+
+          <p>
+            FAQ
+          </p>
+
+        </div>
+
+        <div class="footer-col">
+
+          <h3>
+            My Account
+          </h3>
+
+          <p>
+            My Profile
+          </p>
+
+          <p>
+            Order History
+          </p>
+
+          <p>
+            Running Wishlist
+          </p>
+
+        </div>
+
+        <div class="footer-col contact">
+
+          <h3>
+            Contact Info
+          </h3>
+
+          <p>
+            <i class="bi bi-geo-alt"></i>
+            #1891 Borey Atwood, Street 110E,
+            Sangkat O'Bek Kaom, Khan Sen Sok,
+            Phnom Penh
+          </p>
+
+          <p>
+            <i class="bi bi-telephone"></i>
+            +855 85 20 75 42
+          </p>
+
+          <p>
+            <i class="bi bi-envelope"></i>
+            kimliheng95@gmail.com
+          </p>
+
+        </div>
+
+      </div>
+
+    </footer>
+
+    <!-- =========================================================
+         AOS
+    ========================================================= -->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      AOS.init({
+        duration: 1100,
+        once: false,
+        mirror: true,
+        easing: "ease-in-out",
+        offset: 80,
+      });
+
+      /* =========================================================
+         MOBILE PRODUCTS DROPDOWN
+      ========================================================= */
+
+      const mobileProducts =
+        document.querySelector(".mobile-products");
+
+      const mobileProductsBtn =
+        document.querySelector(".mobile-products-btn");
+
+      if (mobileProductsBtn) {
+        mobileProductsBtn.addEventListener("click", () => {
+          mobileProducts.classList.toggle("open");
+        });
+      }
+
+      /* =========================================================
+         CLOSE MOBILE MENU WHEN CLICKING A LINK
+      ========================================================= */
+
+      const mobileProductLinks =
+        document.querySelectorAll(".mobile-products-menu a");
+
+      mobileProductLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileProducts.classList.remove("open");
+        });
+      });
+    </script>
+
+  </body>
+</html>

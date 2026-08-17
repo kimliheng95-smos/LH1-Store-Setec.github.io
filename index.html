@@ -1,0 +1,1908 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>LH Store</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@100..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Kantumruy Pro", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 140px;
+      }
+
+      body {
+        background: #f7f8fa;
+        overflow-x: hidden;
+      }
+
+      .sticky-header-wrapper {
+        position: relative;
+        z-index: 1000;
+      }
+
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 99999;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+      }
+
+      header {
+        height: 40px;
+        padding: 0 115px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #ddd;
+        background: white;
+        color: #68758a;
+        font-size: 14px;
+      }
+
+      .lang-dropdown {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+      }
+
+      .lang-btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 8px;
+        border-radius: 4px;
+        transition: background 0.3s ease;
+      }
+
+      .lang-btn:hover {
+        background: #f0f0f0;
+      }
+
+      .lang-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: white;
+        min-width: 120px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border-radius: 6px;
+        display: none;
+        flex-direction: column;
+        z-index: 1001;
+        overflow: hidden;
+        border: 1px solid #eee;
+      }
+
+      .lang-dropdown:hover .lang-menu {
+        display: flex;
+      }
+
+      .lang-item {
+        padding: 8px 14px;
+        color: #333;
+        text-decoration: none;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: background 0.2s ease;
+      }
+
+      .lang-item:hover {
+        background: #fde8e8;
+        color: #d71920;
+      }
+
+      .section1 {
+        height: 80px;
+        padding: 0 115px;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .logo img {
+        width: 80px;
+      }
+
+      .search {
+        display: flex;
+        width: 100%;
+        max-width: 680px;
+        height: 42px;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #f5f6fa;
+        border: 1px solid rgb(204, 203, 203);
+      }
+
+      .search input {
+        flex: 1;
+        border: none;
+        outline: none;
+        padding: 0 18px;
+        background: transparent;
+      }
+
+      .search i {
+        width: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #d71920;
+        color: white;
+        cursor: pointer;
+      }
+
+      .search:focus-within {
+        border-color: #d71920;
+      }
+
+      .right-s1 {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .icons {
+        display: flex;
+        gap: 25px;
+        font-size: 20px;
+      }
+
+      .money p:first-child {
+        font-size: 13px;
+      }
+
+      .money p:last-child {
+        font-weight: bold;
+      }
+
+      nav {
+        height: 45px;
+        background: #d71920;
+        padding: 0 115px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        color: white;
+        font-weight: 600;
+        position: sticky;
+        top: 0;
+        z-index: 99999;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+      }
+
+      .nav-toggle {
+        display: none;
+        background: white;
+        color: #d71920;
+        border: none;
+        padding: 6px 14px;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        white-space: nowrap;
+        transition: all 0.3s ease;
+      }
+
+      nav a:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+      }
+
+      nav a.active {
+        background: white;
+        color: #d71920 !important;
+        font-weight: bold;
+      }
+
+      .hero {
+        padding: 25px 115px;
+        display: grid;
+        grid-template-columns: 260px 1fr 260px;
+        gap: 25px;
+      }
+
+      .filter-sidebar {
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 2px 10px #ddd;
+        height: 420px;
+      }
+
+      .filter-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: bold;
+        font-size: 16px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 20px;
+      }
+
+      .filter-group {
+        margin-bottom: 25px;
+      }
+
+      .filter-item {
+        display: flex;
+        align-items: center;
+        border-radius: 8px;
+        font-size: 14px;
+        cursor: pointer;
+        margin-bottom: 4px;
+        transition: all 0.3s ease;
+      }
+
+      .filter-item a {
+        display: block;
+        width: 100%;
+        padding: 10px 12px;
+        color: #555;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .filter-item:hover {
+        background: #f8f9fa;
+      }
+
+      .filter-item:hover a {
+        color: #d71920;
+      }
+
+      .filter-item.active {
+        background: #fde8e8;
+      }
+
+      .filter-item.active a {
+        color: #d71920 !important;
+        font-weight: bold;
+      }
+
+      .banner {
+        height: 420px;
+        width: 100%;
+        border-radius: 15px;
+        background: url("Banner.jpg");
+        background-size: cover;
+        position: relative;
+        background-position: center;
+        overflow: hidden;
+      }
+
+      .bu-more button {
+        background-color: white;
+        color: rgb(0, 0, 0);
+        padding: 10px 20px;
+        border-radius: 18px;
+        border: none;
+        cursor: pointer;
+        font-weight: bolder;
+        font-size: 15px;
+        box-shadow: rgba(138, 121, 121, 0.35) 0px 5px 15px;
+      }
+
+      .bu-more {
+        position: absolute;
+        top: 234px;
+        left: 30px;
+      }
+
+      .offer {
+        height: 420px;
+        border-radius: 15px;
+        background: url("delivery.png");
+        background-size: cover;
+        transition: 0.3s;
+      }
+
+      .offer:hover {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        transform: translateY(-3px);
+        transition: 0.3s;
+      }
+
+      .categories {
+        padding: 20px 115px;
+      }
+
+      .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .title span {
+        color: red;
+      }
+
+      .category-list {
+        display: flex;
+        gap: 40px;
+        margin-top: 30px;
+        overflow-x: auto;
+        padding-bottom: 10px;
+      }
+
+      .item {
+        text-align: center;
+        flex: 0 0 auto;
+      }
+
+      .item img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .item p {
+        margin-top: 10px;
+      }
+
+      .features {
+        margin: 30px 115px;
+        background: white;
+        border-radius: 15px;
+        padding: 25px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 20px;
+        box-shadow: 0 2px 10px #ddd;
+      }
+
+      .feature {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        white-space: nowrap;
+      }
+
+      .feature i {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: #ffe8e8;
+        color: red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+
+      .products-section {
+        padding: 30px 115px;
+      }
+
+      .product-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+      }
+
+      .deal {
+        padding: 53px 12px;
+        text-align: center;
+        font-size: 17px;
+        color: #a09f9f;
+      }
+
+      .product-title h2 {
+        font-size: 22px;
+      }
+
+      .product-list {
+        display: flex;
+        gap: 18px;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding-bottom: 10px;
+      }
+
+      .product-list::-webkit-scrollbar {
+        height: 6px;
+      }
+
+      .product-list::-webkit-scrollbar-thumb {
+        background: #ddd;
+        border-radius: 10px;
+      }
+
+      .product-card {
+        background: rgb(227, 227, 227);
+        border-radius: 15px;
+        flex: 0 0 240px;
+        width: 240px;
+        padding: 12px;
+        border: 1px solid #eee;
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px #ddd;
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+
+      .product-name {
+        margin-top: 12px;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 1.4;
+      }
+
+      .price {
+        margin-top: 10px;
+        color: #d71920;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .price span {
+        color: #777;
+        font-size: 13px;
+        font-weight: normal;
+      }
+
+      .product-bottom-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+        gap: 8px;
+      }
+
+      .product-bottom-row .price {
+        margin-top: 0;
+      }
+
+      .product-actions {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-shrink: 0;
+      }
+
+      .action-btn {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: white;
+        border: 1px solid #e2e2e2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #666;
+        font-size: 13px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        flex-shrink: 0;
+      }
+
+      .action-btn:hover {
+        background: #d71920;
+        border-color: #d71920;
+        color: white;
+      }
+
+      .stores-section {
+        padding: 30px 115px;
+      }
+
+      .store-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .store-title h2 {
+        font-size: 24px;
+        color: #172033;
+      }
+
+      .store-title span {
+        color: #d71920;
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      .store-list {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        padding-bottom: 10px;
+      }
+
+      .store-list::-webkit-scrollbar {
+        height: 6px;
+      }
+
+      .store-list::-webkit-scrollbar-thumb {
+        background: #ddd;
+        border-radius: 10px;
+      }
+
+      .store-card {
+        min-width: 285px;
+        background: rgb(227, 227, 227);
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+        transition: 0.3s;
+      }
+
+      .store-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px #ddd;
+      }
+
+      .store-banner {
+        width: 100%;
+        height: 115px;
+        object-fit: cover;
+      }
+
+      .store-logo {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        object-fit: cover;
+        position: absolute;
+        top: 80px;
+        left: 20px;
+        border: 5px solid white;
+      }
+
+      .store-info {
+        padding: 55px 20px 20px;
+      }
+
+      .store-info h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
+        color: #172033;
+      }
+
+      .rating {
+        color: #777;
+        font-size: 14px;
+      }
+
+      .rating i {
+        color: #ffb400;
+      }
+
+      .product-count {
+        display: inline-block;
+        margin-top: 15px;
+        background: #ffe8e8;
+        color: #d71920;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      footer {
+        background: #101827;
+        color: white;
+        margin-top: 50px;
+      }
+
+      .newsletter {
+        padding: 35px 115px;
+        border-bottom: 1px solid #293241;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .newsletter h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .newsletter p {
+        color: #b8c2d3;
+      }
+
+      .subscribe {
+        display: flex;
+        gap: 10px;
+      }
+
+      .subscribe input {
+        width: 350px;
+        height: 48px;
+        padding: 0 18px;
+        border-radius: 12px;
+        border: 1px solid #596273;
+        background: #273142;
+        color: white;
+        outline: none;
+      }
+
+      .subscribe button {
+        background: #ff7a00;
+        color: white;
+        border: none;
+        padding: 0 30px;
+        border-radius: 12px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .footer-main {
+        padding: 55px 115px;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+        gap: 50px;
+      }
+
+      .footer-logo img {
+        width: 200px;
+      }
+
+      .footer-logo p {
+        margin-top: 25px;
+        color: #b8c2d3;
+        line-height: 1.6;
+      }
+
+      .footer-col h3 {
+        margin-bottom: 25px;
+      }
+
+      .footer-col p {
+        color: #b8c2d3;
+        margin: 15px 0;
+        cursor: pointer;
+      }
+
+      .contact i {
+        color: #ff7a00;
+        margin-right: 12px;
+      }
+
+      .social {
+        display: flex;
+        gap: 15px;
+        margin-top: 25px;
+      }
+
+      .social i {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #273142;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      @media (max-width: 1200px) {
+        header,
+        .section1,
+        nav,
+        .hero,
+        .categories,
+        .features,
+        .products-section,
+        .stores-section,
+        .newsletter,
+        .footer-main {
+          padding-left: 40px;
+          padding-right: 40px;
+        }
+
+        .hero {
+          grid-template-columns: 1fr 2fr;
+        }
+
+        .offer {
+          grid-column: span 2;
+          height: 350px;
+        }
+
+        .filter-sidebar {
+          height: auto;
+        }
+
+        .banner {
+          height: 420px;
+        }
+      }
+
+      @media (max-width: 900px) {
+        header,
+        .section1,
+        nav,
+        .hero,
+        .categories,
+        .features,
+        .products-section,
+        .stores-section,
+        .newsletter,
+        .footer-main {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .offer {
+          grid-column: span 1;
+          height: 280px;
+        }
+
+        .banner {
+          height: 280px;
+        }
+
+        .features {
+          padding: 15px 20px;
+          margin: 20px;
+          display: flex;
+          flex-direction: row;
+          overflow-x: auto;
+          justify-content: flex-start;
+          gap: 25px;
+        }
+
+        .feature {
+          flex: 0 0 auto;
+        }
+
+        .features::-webkit-scrollbar {
+          display: none;
+        }
+
+        .newsletter {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 20px;
+        }
+
+        .footer-main {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        header {
+          padding: 0 15px;
+          font-size: 12px;
+        }
+
+        .section1 {
+          flex-direction: column;
+          height: auto;
+          padding: 15px;
+          gap: 15px;
+        }
+
+        .search {
+          width: 100%;
+        }
+
+        .right-s1 {
+          width: 100%;
+          justify-content: space-between;
+          gap: 15px;
+        }
+
+        nav {
+          height: auto;
+          padding: 10px 15px;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .nav-toggle {
+          display: flex;
+        }
+
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          gap: 5px;
+          padding-top: 10px;
+        }
+
+        .nav-links.show {
+          display: flex;
+        }
+
+        nav a {
+          width: 100%;
+          padding: 8px 12px;
+        }
+
+        .hero {
+          padding: 15px;
+          gap: 15px;
+        }
+
+        .banner {
+          height: 220px;
+        }
+
+        .offer {
+          height: 220px;
+        }
+
+        .bu-more {
+          top: auto;
+          bottom: 20px;
+          left: 20px;
+        }
+
+        .categories,
+        .products-section,
+        .stores-section {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+
+        .subscribe {
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .subscribe input {
+          width: 100%;
+        }
+
+        .subscribe button {
+          height: 48px;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="sticky-header-wrapper">
+      <header>
+        <div>
+          <i class="bi bi-telephone"></i>
+          +855 99 456 459
+        </div>
+
+        <div class="lang-dropdown">
+          <div class="lang-btn">
+            <span>English</span>
+            <i class="bi bi-chevron-down"></i>
+          </div>
+
+          <div class="lang-menu">
+            <a href="index.html" class="lang-item">US English</a>
+            <a href="index_kh.html" class="lang-item">KH Khmer</a>
+          </div>
+        </div>
+      </header>
+
+      <section class="section1">
+        <div class="logo">
+          <img src="Logo.png" alt="Logo" />
+        </div>
+
+        <div class="search">
+          <input placeholder="Search products..." />
+          <i class="bi bi-search"></i>
+        </div>
+
+        <div class="right-s1">
+          <div class="icons">
+            <i class="bi bi-heart"></i>
+            <i class="bi bi-person"></i>
+            <i class="bi bi-cart3"></i>
+          </div>
+
+          <div class="money">
+            <p>Shopping Cart</p>
+            <p>$0.00</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <nav>
+      <button class="nav-toggle" id="navToggleBtn">
+        <span>
+          <i class="bi bi-grid-3x3-gap"></i>
+          Products
+        </span>
+        <i class="bi bi-chevron-down" id="toggleIcon"></i>
+      </button>
+
+      <div class="nav-links" id="navLinksContainer">
+        <a href="health.html">Health & Beauty</a>
+        <a href="Fashion.html">Men's Fashion</a>
+        <a href="kictchen.html">Home & Kitchen</a>
+        <a href="Food_drink.html">Food & Drinks</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <section class="hero" data-aos="zoom-in-up">
+      <aside class="filter-sidebar">
+        <div class="filter-title">
+          <i class="bi bi-sliders"></i>
+          Sort By
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-item active">
+            <a href="#featured-retail">Featured Retail Products</a>
+          </div>
+
+          <div class="filter-item">
+            <a href="#featured-wholesale">Featured Wholesale Products</a>
+          </div>
+
+          <div class="filter-item">
+            <a href="#featured-deals">Special Retail Deals</a>
+          </div>
+
+          <div class="filter-item">
+            <a href="#featured-last-retail">Latest Retail Products</a>
+          </div>
+
+          <div class="filter-item">
+            <a href="#Top-store">Top Stores</a>
+          </div>
+        </div>
+      </aside>
+
+      <div class="banner">
+        <div class="bu-more">
+          <button>
+            View More
+            <i class="bi bi-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="offer"></div>
+    </section>
+
+    <section class="categories" data-aos="zoom-in-up">
+      <div class="title">
+        <h2>Product Categories</h2>
+        <span>View All &gt;</span>
+      </div>
+
+      <div class="category-list">
+        <div class="item">
+          <img
+            src="https://bakseymarket.com/_next/image?url=https%3A%2F%2Fbakseymarket.com%2Fapi%2Fuploads%2Fcategories%2F2aab4ce4833aef1aac744edbce9bf60d.jpg&w=256&q=75"
+            alt="Category"
+          />
+          <p>Health & Beauty</p>
+        </div>
+
+        <div class="item">
+          <img
+            src="https://bakseymarket.com/_next/image?url=https%3A%2F%2Fbakseymarket.com%2Fapi%2Fuploads%2Fcategories%2F9c4acea85dec97cf478d61d6787f66ff.jpg&w=256&q=75"
+            alt="Category"
+          />
+          <p>Men's Fashion</p>
+        </div>
+
+        <div class="item">
+          <img
+            src="https://bakseymarket.com/_next/image?url=https%3A%2F%2Fbakseymarket.com%2Fapi%2Fuploads%2Fcategories%2F393199a10e71041087145ae84281ca4dab5.jpg&w=256&q=75"
+            alt="Category"
+          />
+          <p>Home & Kitchen</p>
+        </div>
+
+        <div class="item">
+          <img
+            src="https://bakseymarket.com/_next/image?url=https%3A%2F%2Fbakseymarket.com%2Fapi%2Fuploads%2Fcategories%2F752c69746597990894504a335728fd9a.jpg&w=256&q=75"
+            alt="Category"
+          />
+          <p>Food & Drinks</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="features" data-aos="zoom-in-up">
+      <div class="feature">
+        <i class="bi bi-award"></i>
+        <span>Best Platform</span>
+      </div>
+
+      <div class="feature">
+        <i class="bi bi-shop"></i>
+        <span>Best Stores</span>
+      </div>
+
+      <div class="feature">
+        <i class="bi bi-currency-dollar"></i>
+        <span>Affordable Prices</span>
+      </div>
+
+      <div class="feature">
+        <i class="bi bi-people"></i>
+        <span>Great Team</span>
+      </div>
+
+      <div class="feature">
+        <i class="bi bi-truck"></i>
+        <span>Fast Delivery</span>
+      </div>
+    </div>
+
+    <div data-aos="zoom-in-up">
+      <section class="products-section" id="featured-retail">
+        <div class="product-title">
+          <h2>Featured Retail Products</h2>
+          <span>◀ ▶</span>
+        </div>
+
+        <div class="product-list">
+          <div class="product-card">
+            <img
+              src="https://bakseymarket.com/api/uploads/products/1774495565934-Ta-ache%20(2).jpg"
+              alt="Product"
+            />
+            <div class="product-name">Ta-Ache Special Muscle Balm</div>
+            <div class="product-bottom-row">
+              <div class="price">$10.00 <span>/ Box</span></div>
+              <div class="product-actions">
+                <div class="action-btn" title="Quick View">
+                  <i class="bi bi-eye"></i>
+                </div>
+                <div class="action-btn" title="Add to Cart">
+                  <i class="bi bi-cart3"></i>
+                </div>
+                <div class="action-btn" title="Wishlist">
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://bakseymarket.com/api/uploads/products/1774494768199-DSC00151%20(1)%20(1).jpg"
+              alt="Product"
+            />
+            <div class="product-name">Ta-Ache Digestive Health Set</div>
+            <div class="product-bottom-row">
+              <div class="price">$15.00 <span>/ Box</span></div>
+              <div class="product-actions">
+                <div class="action-btn" title="Quick View">
+                  <i class="bi bi-eye"></i>
+                </div>
+                <div class="action-btn" title="Add to Cart">
+                  <i class="bi bi-cart3"></i>
+                </div>
+                <div class="action-btn" title="Wishlist">
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://bakseymarket.com/api/uploads/products/1777522241031-ST_KonYerng_Bottle_Pink.jpg"
+              alt="Product"
+            />
+            <div class="product-name">Kon Yerng Baby Wash Pink</div>
+            <div class="product-bottom-row">
+              <div class="price">$4.50 <span>/ Bottle</span></div>
+              <div class="product-actions">
+                <div class="action-btn" title="Quick View">
+                  <i class="bi bi-eye"></i>
+                </div>
+                <div class="action-btn" title="Add to Cart">
+                  <i class="bi bi-cart3"></i>
+                </div>
+                <div class="action-btn" title="Wishlist">
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://bakseymarket.com/api/uploads/products/1775530308278-P-9.jpg"
+              alt="Product"
+            />
+            <div class="product-name">Cambodia Sports Shirt</div>
+            <div class="product-bottom-row">
+              <div class="price">$13.00 <span>/ Set</span></div>
+              <div class="product-actions">
+                <div class="action-btn" title="Quick View">
+                  <i class="bi bi-eye"></i>
+                </div>
+                <div class="action-btn" title="Add to Cart">
+                  <i class="bi bi-cart3"></i>
+                </div>
+                <div class="action-btn" title="Wishlist">
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://bakseymarket.com/api/uploads/products/1779260375356-IMG_2681.jpg"
+              alt="Product"
+            />
+            <div class="product-name">Masum Soap (55g)</div>
+            <div class="product-bottom-row">
+              <div class="price">$3.00 <span>/ Box</span></div>
+              <div class="product-actions">
+                <div class="action-btn" title="Quick View">
+                  <i class="bi bi-eye"></i>
+                </div>
+                <div class="action-btn" title="Add to Cart">
+                  <i class="bi bi-cart3"></i>
+                </div>
+                <div class="action-btn" title="Wishlist">
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://bakseymarket.com/api/uploads/products/1779343867185-chicken1.jpg"
+              alt="Product"
+            />
+            <div class="product-name">Dried Chicken 75g</div>
+            <div class="product-bottom-row">
+              <div class="price">$4.20 <span>/ Can</span></div>
+              <div class="product-actions">
+                <div class="action-btn" title="Quick View">
+                  <i class="bi bi-eye"></i>
+                </div>
+                <div class="action-btn" title="Add to Cart">
+                  <i class="bi bi-cart3"></i>
+                </div>
+                <div class="action-btn" title="Wishlist">
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://bakseymarket.com/api/uploads/products/1779679712743-Gemini_Generated_Image_qe7zqrqe7zqrqe7z.jpg"
+              alt="Product"
+            />
+            <div class="product-name">Dried Namwa Banana 75g</div>
+            <div class="product-bottom-row">
+              <div class="price">$4.20 <span>/ Can</span></div>
+              <div class="product-actions">
+                <div class="action-btn" title="Quick View">
+                  <i class="bi bi-eye"></i>
+                </div>
+                <div class="action-btn" title="Add to Cart">
+                  <i class="bi bi-cart3"></i>
+                </div>
+                <div class="action-btn" title="Wishlist">
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="https://bakseymarket.com/api/uploads/products/1779679163195-IMG_2330.jpg"
+              alt="Product"
+            />
+            <div class="product-name">Namwa Banana 75g</div>
+            <div class="product-bottom-row">
+              <div class="price">$4.20 <span>/ Can</span></div>
+              <div class="product-actions">
+                <div class="action-btn" title="Quick View">
+                  <i class="bi bi-eye"></i>
+                </div>
+                <div class="action-btn" title="Add to Cart">
+                  <i class="bi bi-cart3"></i>
+                </div>
+                <div class="action-btn" title="Wishlist">
+                  <i class="bi bi-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section
+      class="products-section"
+      id="featured-wholesale"
+      data-aos="zoom-in-up"
+    >
+      <div class="product-title">
+        <h2>Featured Wholesale Products</h2>
+        <span>◀ ▶</span>
+      </div>
+
+      <div class="product-list">
+        <div class="product-card">
+          <img
+            src="https://bakseymarket.com/_next/image?url=https%3A%2F%2Fbakseymarket.com%2Fapi%2Fuploads%2Fproducts%2F1775016246227-%C3%A1%C2%9E%C2%8F%C3%A1%C2%9E%C2%B6%C3%A1%C2%9E%C2%80%C3%A1%C2%9E%C2%B6%C3%A1%C2%9E%C2%8C%C3%A1%C2%9E%C2%B6%C3%A1%C2%9F%C2%A1%20(2).jpg&w=1080&q=75"
+            alt="Product"
+          />
+          <div class="product-name">Ta-Ache Set 12 Boxes</div>
+          <div class="product-bottom-row">
+            <div class="price">$135.00 <span>/ Set</span></div>
+            <div class="product-actions">
+              <div class="action-btn" title="Quick View">
+                <i class="bi bi-eye"></i>
+              </div>
+              <div class="action-btn" title="Add to Cart">
+                <i class="bi bi-cart3"></i>
+              </div>
+              <div class="action-btn" title="Wishlist">
+                <i class="bi bi-heart"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="https://bakseymarket.com/api/uploads/products/1779260375356-IMG_2681.jpg"
+            alt="Product Image"
+          />
+          <div class="product-name">Masum Soap (55g)</div>
+          <div class="product-bottom-row">
+            <div class="price">$2.31 <span>/ Box</span></div>
+            <div class="product-actions">
+              <div class="action-btn" title="Quick View">
+                <i class="bi bi-eye"></i>
+              </div>
+              <div class="action-btn" title="Add to Cart">
+                <i class="bi bi-cart3"></i>
+              </div>
+              <div class="action-btn" title="Wishlist">
+                <i class="bi bi-heart"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="https://bakseymarket.com/_next/image?url=https%3A%2F%2Fbakseymarket.com%2Fapi%2Fuploads%2Fproducts%2F1779260398345-IMG_2684.jpg&w=1080&q=75"
+            alt="Product Image"
+          />
+          <div class="product-name">Masum Soap (55g)</div>
+          <div class="product-bottom-row">
+            <div class="price">$2.25 <span>/ Box</span></div>
+            <div class="product-actions">
+              <div class="action-btn" title="Quick View">
+                <i class="bi bi-eye"></i>
+              </div>
+              <div class="action-btn" title="Add to Cart">
+                <i class="bi bi-cart3"></i>
+              </div>
+              <div class="action-btn" title="Wishlist">
+                <i class="bi bi-heart"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="https://bakseymarket.com/_next/image?url=https%3A%2F%2Fbakseymarket.com%2Fapi%2Fuploads%2Fproducts%2F1774492214162-peanut%20oil%20(1).jpg&w=1080&q=75"
+            alt="Product Image"
+          />
+          <div class="product-name">Peanut Oil (250ml)</div>
+          <div class="product-bottom-row">
+            <div class="price">$8.00 <span>/ Bottle</span></div>
+            <div class="product-actions">
+              <div class="action-btn" title="Quick View">
+                <i class="bi bi-eye"></i>
+              </div>
+              <div class="action-btn" title="Add to Cart">
+                <i class="bi bi-cart3"></i>
+              </div>
+              <div class="action-btn" title="Wishlist">
+                <i class="bi bi-heart"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="https://bakseymarket.com/_next/image?url=https%3A%2F%2Fbakseymarket.com%2Fapi%2Fuploads%2Fproducts%2F1774492374965-chili%20oil%20(1).jpg&w=1080&q=75"
+            alt="Product Image"
+          />
+          <div class="product-name">Chili Oil (100ml)</div>
+          <div class="product-bottom-row">
+            <div class="price">$4.50 <span>/ Bottle</span></div>
+            <div class="product-actions">
+              <div class="action-btn" title="Quick View">
+                <i class="bi bi-eye"></i>
+              </div>
+              <div class="action-btn" title="Add to Cart">
+                <i class="bi bi-cart3"></i>
+              </div>
+              <div class="action-btn" title="Wishlist">
+                <i class="bi bi-heart"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="https://bakseymarket.com/_next/image?url=https%3A%2F%2Fbakseymarket.com%2Fapi%2Fuploads%2Fproducts%2F1774491829554-coconut%20oil%20(1).jpg&w=1080&q=75"
+            alt="Product Image"
+          />
+          <div class="product-name">Pure Coconut Oil</div>
+          <div class="product-bottom-row">
+            <div class="price">$8.50 <span>/ Bottle</span></div>
+            <div class="product-actions">
+              <div class="action-btn" title="Quick View">
+                <i class="bi bi-eye"></i>
+              </div>
+              <div class="action-btn" title="Add to Cart">
+                <i class="bi bi-cart3"></i>
+              </div>
+              <div class="action-btn" title="Wishlist">
+                <i class="bi bi-heart"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="https://bakseymarket.com/api/uploads/products/1775530042535-P-7.jpg"
+            alt="Product Image"
+          />
+          <div class="product-name">
+            Phnom Penh Police Commissioner Football Club Shirt (White)
+          </div>
+          <div class="product-bottom-row">
+            <div class="price">$13.50 <span>/ Set</span></div>
+            <div class="product-actions">
+              <div class="action-btn" title="Quick View">
+                <i class="bi bi-eye"></i>
+              </div>
+              <div class="action-btn" title="Add to Cart">
+                <i class="bi bi-cart3"></i>
+              </div>
+              <div class="action-btn" title="Wishlist">
+                <i class="bi bi-heart"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="https://bakseymarket.com/api/uploads/products/1775529789755-P-6.jpg"
+            alt="Product Image"
+          />
+          <div class="product-name">
+            Phnom Penh Police Commissioner Football Club Shirt (Black)
+          </div>
+          <div class="product-bottom-row">
+            <div class="price">$13.50 <span>/ Set</span></div>
+            <div class="product-actions">
+              <div class="action-btn" title="Quick View">
+                <i class="bi bi-eye"></i>
+              </div>
+              <div class="action-btn" title="Add to Cart">
+                <i class="bi bi-cart3"></i>
+              </div>
+              <div class="action-btn" title="Wishlist">
+                <i class="bi bi-heart"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products-section" id="featured-deals" data-aos="zoom-in-up">
+      <div class="product-title">
+        <h2>Special Retail Deals</h2>
+        <span>No Products</span>
+      </div>
+
+      <h2 class="deal">There are no special deals available</h2>
+    </section>
+
+    <section
+      class="products-section"
+      id="featured-last-retail"
+      data-aos="zoom-in-up"
+    >
+      <div class="product-title">
+        <h2>Latest Retail Products</h2>
+        <span>◀ ▶</span>
+      </div>
+
+      <div class="product-list">
+        <div class="product-card">
+          <img
+            src="https://bakseymarket.com/_next/image?url=https%3A%2F%2Fbakseymarket.com%2Fapi%2Fuploads%2Fproducts%2F1774495565934-Ta-ache%20(2).jpg&w=1920&q=75"
+            alt="Product Image"
+          />
+          <div class="product-name">Ta-Ache Special Muscle Balm</div>
+          <div class="product-bottom-row">
+            <div class="price">$10.00 <span>/ Box</span></div>
+            <div class="product-actions">
+              <div class="action-btn" title="Quick View">
+                <i class="bi bi-eye"></i>
+              </div>
+              <div class="action-btn" title="Add to Cart">
+                <i class="bi bi-cart3"></i>
+              </div>
+              <div class="action-btn" title="Wishlist">
+                <i class="bi bi-heart"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="https://bakseymarket.com/_next/image?url=https%3A%2F%2Fbakseymarket.com%2Fapi%2Fuploads%2Fproducts%2F1774495565934-Ta-ache%20(2).jpg&w=640&q=75"
+            alt="Product Image"
+          />
+          <div class="product-name">Ta-Ache Special Muscle Balm</div>
+          <div class="product-bottom-row">
+            <div class="price">$10.00 <span>/ Box</span></div>
+            <div class="product-actions">
+              <div class="action-btn" title="Quick View">
+                <i class="bi bi-eye"></i>
+              </div>
+              <div class="action-btn" title="Add to Cart">
+                <i class="bi bi-cart3"></i>
+              </div>
+              <div class="action-btn" title="Wishlist">
+                <i class="bi bi-heart"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="https://bakseymarket.com/_next/image?url=https%3A%2F%2Fbakseymarket.com%2Fapi%2Fuploads%2Fproducts%2F1774494768199-DSC00151%20(1)%20(1).jpg&w=640&q=75"
+            alt="Product Image"
+          />
+          <div class="product-name">Ta-Ache Digestive Health Set</div>
+          <div class="product-bottom-row">
+            <div class="price">$15.00 <span>/ Box</span></div>
+            <div class="product-actions">
+              <div class="action-btn" title="Quick View">
+                <i class="bi bi-eye"></i>
+              </div>
+              <div class="action-btn" title="Add to Cart">
+                <i class="bi bi-cart3"></i>
+              </div>
+              <div class="action-btn" title="Wishlist">
+                <i class="bi bi-heart"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="https://bakseymarket.com/api/uploads/products/1777522241031-ST_KonYerng_Bottle_Pink.jpg"
+            alt="Product Image"
+          />
+          <div class="product-name">Kon Yerng Baby Wash Pink 300ml</div>
+          <div class="product-bottom-row">
+            <div class="price">$4.50 <span>/ Bottle</span></div>
+            <div class="product-actions">
+              <div class="action-btn" title="Quick View">
+                <i class="bi bi-eye"></i>
+              </div>
+              <div class="action-btn" title="Add to Cart">
+                <i class="bi bi-cart3"></i>
+              </div>
+              <div class="action-btn" title="Wishlist">
+                <i class="bi bi-heart"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="https://bakseymarket.com/api/uploads/products/1775530308278-P-9.jpg"
+            alt="Product Image"
+          />
+          <div class="product-name">3rd Intervention Division Shirt</div>
+          <div class="product-bottom-row">
+            <div class="price">$13.00 <span>/ Set</span></div>
+            <div class="product-actions">
+              <div class="action-btn" title="Quick View">
+                <i class="bi bi-eye"></i>
+              </div>
+              <div class="action-btn" title="Add to Cart">
+                <i class="bi bi-cart3"></i>
+              </div>
+              <div class="action-btn" title="Wishlist">
+                <i class="bi bi-heart"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="https://bakseymarket.com/api/uploads/products/1781514544886-IMG_3316.jpg"
+            alt="Product Image"
+          />
+          <div class="product-name">Golden Shark Fish Sauce 100ml</div>
+          <div class="product-bottom-row">
+            <div class="price">$0.69 <span>/ Bottle</span></div>
+            <div class="product-actions">
+              <div class="action-btn" title="Quick View">
+                <i class="bi bi-eye"></i>
+              </div>
+              <div class="action-btn" title="Add to Cart">
+                <i class="bi bi-cart3"></i>
+              </div>
+              <div class="action-btn" title="Wishlist">
+                <i class="bi bi-heart"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="https://bakseymarket.com/api/uploads/products/1781514811885-IMG_3317.jpg"
+            alt="Product Image"
+          />
+          <div class="product-name">Golden Shark Fish Sauce 100ml</div>
+          <div class="product-bottom-row">
+            <div class="price">$0.69 <span>/ Bottle</span></div>
+            <div class="product-actions">
+              <div class="action-btn" title="Quick View">
+                <i class="bi bi-eye"></i>
+              </div>
+              <div class="action-btn" title="Add to Cart">
+                <i class="bi bi-cart3"></i>
+              </div>
+              <div class="action-btn" title="Wishlist">
+                <i class="bi bi-heart"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img
+            src="https://bakseymarket.com/api/uploads/products/1780473495319-photo_2026-06-03_14-57-16.jpg"
+            alt="Product Image"
+          />
+          <div class="product-name">PALAMIDAS Olive Oil 3L</div>
+          <div class="product-bottom-row">
+            <div class="price">$25.30 <span>/ Bottle</span></div>
+            <div class="product-actions">
+              <div class="action-btn" title="Quick View">
+                <i class="bi bi-eye"></i>
+              </div>
+              <div class="action-btn" title="Add to Cart">
+                <i class="bi bi-cart3"></i>
+              </div>
+              <div class="action-btn" title="Wishlist">
+                <i class="bi bi-heart"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stores-section" id="Top-store" data-aos="zoom-in-up">
+      <div class="store-title">
+        <h2>Top Stores</h2>
+        <span>View All ❯</span>
+      </div>
+
+      <div class="store-list">
+        <div class="store-card">
+          <img
+            class="store-banner"
+            src="https://bakseymarket.com/api/uploads/covers/cover-1779264750582-Lh-products.jpg"
+            alt="Store Banner"
+          />
+          <img
+            class="store-logo"
+            src="https://bakseymarket.com/api/uploads/logos/logo-1779259903459-301491143.jpg"
+            alt="Store Logo"
+          />
+
+          <div class="store-info">
+            <h3>LH Kitchen</h3>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i>
+              Rating 5.0 ・ 6 Reviews
+            </div>
+            <div class="product-count">🔴 8 Products</div>
+          </div>
+        </div>
+
+        <div class="store-card">
+          <img
+            class="store-banner"
+            src="https://bakseymarket.com/api/uploads/covers/cover-1775189530861-480959305_641521835227739_4177052573915081638_n-(1).jpg"
+            alt="Store Banner"
+          />
+          <img
+            class="store-logo"
+            src="https://bakseymarket.com/api/uploads/logos/logo-1775189530810-555861991_817688040944450_8386627588462865576_n.jpg"
+            alt="Store Logo"
+          />
+
+          <div class="store-info">
+            <h3>Kaka Company</h3>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i>
+              Rating 5.0 ・ 4 Reviews
+            </div>
+            <div class="product-count">🔴 16 Products</div>
+          </div>
+        </div>
+
+        <div class="store-card">
+          <img
+            class="store-banner"
+            src="https://bakseymarket.com/api/uploads/logos/logo-1779677877042-249220214.jpg"
+            alt="Store Banner"
+          />
+          <img
+            class="store-logo"
+            src="https://bakseymarket.com/api/uploads/logos/logo-1779677877042-249220214.jpg"
+            alt="Store Logo"
+          />
+
+          <div class="store-info">
+            <h3>Sabay Market</h3>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i>
+              Rating 5.0 ・ 2 Reviews
+            </div>
+            <div class="product-count">🔴 12 Products</div>
+          </div>
+        </div>
+
+        <div class="store-card">
+          <img
+            class="store-banner"
+            src="https://bakseymarket.com/api/uploads/covers/cover-1779260152850-keo-krob.jpg"
+            alt="Store Banner"
+          />
+          <img
+            class="store-logo"
+            src="https://bakseymarket.com/api/uploads/covers/cover-1779260152850-keo-krob.jpg"
+            alt="Store Logo"
+          />
+
+          <div class="store-info">
+            <h3>Cambodia Soap</h3>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i>
+              Rating 5.0 ・ 2 Reviews
+            </div>
+            <div class="product-count">🔴 2 Products</div>
+          </div>
+        </div>
+
+        <div class="store-card">
+          <img
+            class="store-banner"
+            src="https://bakseymarket.com/api/uploads/covers/cover-1778653550214-Store-Banner(%C3%A1%C2%9E%C2%9B%C3%A1%C2%9E%C2%B8%C3%A1%C2%9E-%C3%A1%C2%9E%C2%BD%C3%A1%C2%9E%C2%93).jpg"
+            alt="Store Banner"
+          />
+          <img
+            class="store-logo"
+            src="https://bakseymarket.com/api/uploads/logos/logo-1774853682814-202246577.jpg"
+            alt="Store Logo"
+          />
+
+          <div class="store-info">
+            <h3>Lihoun Food</h3>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i>
+              Rating 5.0 ・ 2 Reviews
+            </div>
+            <div class="product-count">🔴 3 Products</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="newsletter">
+        <div>
+          <h2>Subscribe for the latest updates</h2>
+          <p>Get updates about new products and special offers!</p>
+        </div>
+
+        <div class="subscribe">
+          <input placeholder="Enter your email" />
+          <button>Subscribe</button>
+        </div>
+      </div>
+
+      <div class="footer-main">
+        <div class="footer-logo">
+          <img src="Logo.png" alt="Logo" />
+
+          <p>
+            Your one-stop destination for all your shopping needs. Quality
+            products from trusted suppliers.
+          </p>
+
+          <div class="social">
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-twitter"></i>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-youtube"></i>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <p>About Us</p>
+          <p>Contact</p>
+          <p>FAQ</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>My Account</h3>
+          <p>My Profile</p>
+          <p>Order History</p>
+          <p>Wishlist</p>
+        </div>
+
+        <div class="footer-col contact">
+          <h3>Contact Information</h3>
+
+          <p>
+            <i class="bi bi-geo-alt"></i>
+            #1891 Borey Atwood, Street 110E, Sangkat Tuek Thla, Khan Sen Sok,
+            Phnom Penh
+          </p>
+
+          <p>
+            <i class="bi bi-telephone"></i>
+            +855 85 20 75 42
+          </p>
+
+          <p>
+            <i class="bi bi-envelope"></i>
+            kimliheng95@gmail.com
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      AOS.init({
+        duration: 1100,
+        once: false,
+        mirror: true,
+        easing: "ease-in-out",
+      });
+      const navToggleBtn = document.getElementById("navToggleBtn");
+      const navLinksContainer = document.getElementById("navLinksContainer");
+      const toggleIcon = document.getElementById("toggleIcon");
+
+      if (navToggleBtn) {
+        navToggleBtn.addEventListener("click", function () {
+          navLinksContainer.classList.toggle("show");
+          if (navLinksContainer.classList.contains("show")) {
+            toggleIcon.classList.replace("bi-chevron-down", "bi-chevron-up");
+          } else {
+            toggleIcon.classList.replace("bi-chevron-up", "bi-chevron-down");
+          }
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const filterItems = document.querySelectorAll(
+          ".filter-group .filter-item",
+        );
+
+        filterItems.forEach((item) => {
+          const link = item.querySelector("a");
+          if (!link) return;
+
+          link.addEventListener("click", function () {
+            filterItems.forEach((i) => i.classList.remove("active"));
+            item.classList.add("active");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

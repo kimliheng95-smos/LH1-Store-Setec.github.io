@@ -1,0 +1,2883 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>LH Store - Home & Kitchen</title>
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@100..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      /* =====================================================
+         RESET
+      ===================================================== */
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 70px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Kantumruy Pro", sans-serif;
+      }
+
+      body {
+        background: #f7f8fa;
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      button,
+      input {
+        font-family: inherit;
+      }
+
+      /* =====================================================
+         TOP HEADER
+      ===================================================== */
+
+      header {
+        height: 40px;
+        padding: 0 115px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        background: #fff;
+        color: #68758a;
+
+        border-bottom: 1px solid #ddd;
+
+        font-size: 14px;
+      }
+
+      /* =====================================================
+         LANGUAGE
+      ===================================================== */
+
+      .lang-dropdown {
+        position: relative;
+        cursor: pointer;
+      }
+
+      .lang-btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        padding: 4px 8px;
+        border-radius: 4px;
+
+        transition: 0.3s ease;
+      }
+
+      .lang-btn:hover {
+        background: #f0f0f0;
+      }
+
+      .lang-menu {
+        position: absolute;
+
+        top: 100%;
+        right: 0;
+
+        min-width: 120px;
+
+        display: none;
+        flex-direction: column;
+
+        background: #fff;
+
+        border: 1px solid #eee;
+        border-radius: 6px;
+
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+        overflow: hidden;
+
+        z-index: 5000;
+      }
+
+      .lang-dropdown:hover .lang-menu {
+        display: flex;
+      }
+
+      .lang-item {
+        padding: 8px 14px;
+
+        display: flex;
+        align-items: center;
+
+        color: #333;
+        text-decoration: none;
+
+        font-size: 13px;
+
+        transition: 0.2s ease;
+      }
+
+      .lang-item:hover {
+        background: #fde8e8;
+        color: #d71920;
+      }
+
+      /* =====================================================
+         MAIN HEADER
+      ===================================================== */
+
+      .section1 {
+        min-height: 80px;
+
+        padding: 0 115px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 20px;
+
+        background: #fff;
+      }
+
+      /* LOGO */
+
+      .logo {
+        flex-shrink: 0;
+      }
+
+      .logo img {
+        width: 80px;
+        display: block;
+      }
+
+      /* SEARCH */
+
+      .search {
+        width: 100%;
+        max-width: 680px;
+        height: 42px;
+
+        display: flex;
+
+        border: 1px solid #c2c2c2;
+        border-radius: 8px;
+
+        overflow: hidden;
+
+        background: #f5f6fa;
+      }
+
+      .search input {
+        flex: 1;
+        min-width: 0;
+
+        border: none;
+        outline: none;
+
+        padding: 0 18px;
+
+        background: transparent;
+
+        font-size: 14px;
+      }
+
+      .search i {
+        width: 45px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        flex-shrink: 0;
+
+        background: #d71920;
+        color: #fff;
+
+        cursor: pointer;
+      }
+
+      /* RIGHT HEADER */
+
+      .right-s1 {
+        display: flex;
+        align-items: center;
+
+        gap: 20px;
+
+        flex-shrink: 0;
+      }
+
+      .icons {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        font-size: 20px;
+      }
+
+      .icons i {
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      .icons i:hover {
+        color: #d71920;
+      }
+
+      .money p:first-child {
+        font-size: 12px;
+        color: #777;
+      }
+
+      .money p:last-child {
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      /* =====================================================
+         NAVBAR
+      ===================================================== */
+
+      nav {
+        height: 45px;
+
+        padding: 0 115px;
+
+        display: flex;
+        align-items: center;
+
+        gap: 15px;
+
+        background: #d71920;
+        color: #fff;
+
+        font-weight: 600;
+
+        position: sticky;
+        top: 0;
+        z-index: 2000;
+
+        overflow-x: auto;
+        white-space: nowrap;
+
+        -webkit-overflow-scrolling: touch;
+      }
+
+      nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      nav > a {
+        color: #fff;
+        text-decoration: none;
+
+        padding: 8px 16px;
+
+        border-radius: 6px;
+
+        white-space: nowrap;
+
+        transition: 0.3s ease;
+      }
+
+      nav > a:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      nav > a.active {
+        background: #fff;
+        color: #d71920 !important;
+        font-weight: 700;
+      }
+
+      /* =====================================================
+         MOBILE PRODUCT MENU
+      ===================================================== */
+
+      .mobile-products {
+        display: none;
+      }
+
+      .mobile-products-btn {
+        height: 45px;
+        width: 100%;
+
+        padding: 0 15px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        color: #fff;
+
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .mobile-products-left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .mobile-products-btn > i {
+        transition: transform 0.3s ease;
+      }
+
+      .mobile-products.open .mobile-products-btn > i {
+        transform: rotate(180deg);
+      }
+
+      .mobile-products-menu {
+        display: none;
+
+        width: 100%;
+
+        background: #fff;
+
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      .mobile-products.open .mobile-products-menu {
+        display: block;
+      }
+
+      .mobile-products-menu a {
+        padding: 13px 18px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        color: #333;
+        text-decoration: none;
+
+        border-bottom: 1px solid #eee;
+
+        background: #fff;
+
+        transition: 0.2s ease;
+      }
+
+      .mobile-products-menu a:hover,
+      .mobile-products-menu a.active {
+        background: #fde8e8;
+        color: #d71920;
+      }
+
+      /* =====================================================
+         CATEGORY BANNER
+      ===================================================== */
+
+      .category-banner {
+        padding: 40px 115px;
+
+        display: flex;
+        align-items: center;
+
+        gap: 20px;
+
+        background: #d71920;
+        color: #fff;
+      }
+
+      .category-icon {
+        width: 65px;
+        height: 65px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        flex-shrink: 0;
+
+        background: rgba(255, 255, 255, 0.2);
+
+        border-radius: 12px;
+
+        font-size: 32px;
+      }
+
+      .category-title h1 {
+        font-size: 32px;
+        font-weight: bold;
+      }
+
+      .category-title p {
+        margin-top: 4px;
+
+        font-size: 14px;
+
+        opacity: 0.9;
+      }
+
+      /* =====================================================
+         MAIN CONTAINER
+      ===================================================== */
+
+      .container {
+        padding: 30px 115px;
+
+        display: grid;
+        grid-template-columns: 260px minmax(0, 1fr);
+
+        gap: 30px;
+
+        align-items: start;
+      }
+
+      /* =====================================================
+         FILTER
+      ===================================================== */
+
+      .filter-sidebar {
+        height: fit-content;
+
+        padding: 20px;
+
+        background: #fff;
+
+        border-radius: 12px;
+
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+        position: sticky;
+        top: 60px;
+      }
+
+      .filter-title {
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+
+        display: flex;
+        align-items: center;
+
+        gap: 10px;
+
+        border-bottom: 1px solid #eee;
+
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .filter-group {
+        margin-bottom: 25px;
+      }
+
+      .filter-item {
+        margin-bottom: 4px;
+
+        border-radius: 8px;
+
+        cursor: pointer;
+
+        transition: 0.3s ease;
+      }
+
+      .filter-item a {
+        display: block;
+        width: 100%;
+
+        padding: 10px 12px;
+
+        color: #555;
+
+        text-decoration: none;
+
+        font-size: 14px;
+      }
+
+      .filter-item:hover {
+        background: #f8f9fa;
+      }
+
+      .filter-item:hover a {
+        color: #d71920;
+      }
+
+      .filter-item.active {
+        background: #fde8e8;
+      }
+
+      .filter-item.active a {
+        color: #d71920 !important;
+        font-weight: bold;
+      }
+
+      /* =====================================================
+         PRODUCTS HEADER
+      ===================================================== */
+
+      .products-header {
+        margin-bottom: 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 15px;
+      }
+
+      .showing-text {
+        color: #666;
+        font-size: 15px;
+      }
+
+      .view-options {
+        display: flex;
+        gap: 8px;
+      }
+
+      .view-btn {
+        width: 36px;
+        height: 36px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid #ddd;
+        border-radius: 8px;
+
+        background: #fff;
+
+        color: #666;
+
+        cursor: pointer;
+      }
+
+      .view-btn.active {
+        background: #d71920;
+        border-color: #d71920;
+
+        color: #fff;
+      }
+
+      /* =====================================================
+         PRODUCT GRID
+      ===================================================== */
+
+      .product-grid {
+        display: grid;
+
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+
+        gap: 20px;
+      }
+
+      /* =====================================================
+         PRODUCT CARD
+      ===================================================== */
+
+      .product-card {
+        min-width: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        overflow: hidden;
+
+        background: #e3e3e3;
+
+        border: 1px solid #eee;
+        border-radius: 12px;
+
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+
+        cursor: pointer;
+
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .product-card:hover {
+        transform: translateY(-6px) !important;
+
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      /* =====================================================
+         PRODUCT IMAGE
+      ===================================================== */
+
+      .product-img {
+        width: 100%;
+        height: 200px;
+
+        flex-shrink: 0;
+
+        overflow: hidden;
+
+        background: #f0f3f6;
+      }
+
+      .product-img img {
+        width: 100%;
+        height: 100%;
+
+        display: block;
+
+        object-fit: cover;
+        object-position: center;
+
+        transition: transform 0.4s ease;
+      }
+
+      .product-card:hover .product-img img {
+        transform: scale(1.08);
+      }
+
+      /* =====================================================
+         PRODUCT INFO
+      ===================================================== */
+
+      .product-info {
+        padding: 12px;
+
+        min-width: 0;
+
+        flex: 1;
+
+        display: flex;
+        flex-direction: column;
+      }
+
+      .product-category {
+        min-height: 18px;
+
+        color: #888;
+
+        font-size: 12px;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .product-name {
+        min-height: 40px;
+
+        margin-top: 4px;
+
+        color: #222;
+
+        font-size: 14px;
+        font-weight: 600;
+
+        line-height: 1.4;
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+
+        overflow: hidden;
+      }
+
+      /* =====================================================
+         RATING
+      ===================================================== */
+
+      .rating {
+        min-height: 18px;
+
+        margin-top: 8px;
+
+        display: flex;
+        align-items: center;
+
+        gap: 4px;
+
+        color: #e6a23c;
+
+        font-size: 12px;
+      }
+
+      .rating span {
+        color: #888;
+      }
+
+      /* =====================================================
+         PRICE + ACTIONS
+         IMPORTANT FIX
+      ===================================================== */
+
+      .product-bottom-row {
+        width: 100%;
+
+        min-height: 38px;
+
+        margin-top: auto;
+        padding-top: 8px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 8px;
+      }
+
+      .price {
+        min-width: 0;
+
+        color: #d71920;
+
+        font-size: 16px;
+        font-weight: bold;
+
+        line-height: 1.2;
+
+        white-space: nowrap;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .price span {
+        color: #777;
+
+        font-size: 12px;
+        font-weight: normal;
+      }
+
+      /* =====================================================
+         ACTIONS
+      ===================================================== */
+
+      .product-actions {
+        display: flex;
+        align-items: center;
+
+        gap: 5px;
+
+        flex-shrink: 0;
+      }
+
+      .action-btn {
+        width: 30px;
+        height: 30px;
+
+        flex-shrink: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: #fff;
+
+        border: 1px solid #e2e2e2;
+        border-radius: 50%;
+
+        color: #666;
+
+        font-size: 13px;
+
+        cursor: pointer;
+
+        transition: 0.2s ease;
+      }
+
+      .action-btn:hover {
+        background: #d71920;
+        border-color: #d71920;
+
+        color: #fff;
+      }
+
+      /* =====================================================
+         FOOTER
+      ===================================================== */
+
+      footer {
+        margin-top: 50px;
+
+        background: #101827;
+
+        color: #fff;
+      }
+
+      .newsletter {
+        padding: 35px 115px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 25px;
+
+        border-bottom: 1px solid #293241;
+      }
+
+      .newsletter h2 {
+        margin-bottom: 10px;
+
+        font-size: 24px;
+      }
+
+      .newsletter p {
+        color: #b8c2d3;
+      }
+
+      .subscribe {
+        display: flex;
+
+        gap: 10px;
+      }
+
+      .subscribe input {
+        width: 350px;
+        height: 48px;
+
+        padding: 0 18px;
+
+        border: 1px solid #596273;
+        border-radius: 12px;
+
+        outline: none;
+
+        background: #273142;
+        color: #fff;
+      }
+
+      .subscribe button {
+        height: 48px;
+
+        padding: 0 30px;
+
+        border: none;
+        border-radius: 12px;
+
+        background: #ff7a00;
+        color: #fff;
+
+        font-weight: bold;
+
+        cursor: pointer;
+      }
+
+      .footer-main {
+        padding: 55px 115px;
+
+        display: grid;
+
+        grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+
+        gap: 50px;
+      }
+
+      .footer-logo img {
+        width: 200px;
+      }
+
+      .footer-logo p {
+        margin-top: 25px;
+
+        color: #b8c2d3;
+
+        line-height: 1.6;
+      }
+
+      .footer-col h3 {
+        margin-bottom: 25px;
+      }
+
+      .footer-col p {
+        margin: 15px 0;
+
+        color: #b8c2d3;
+
+        cursor: pointer;
+      }
+
+      .contact i {
+        margin-right: 12px;
+
+        color: #ff7a00;
+      }
+
+      .social {
+        margin-top: 25px;
+
+        display: flex;
+
+        gap: 15px;
+      }
+
+      .social i {
+        width: 40px;
+        height: 40px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+
+        background: #273142;
+
+        font-size: 20px;
+
+        cursor: pointer;
+      }
+
+      /* =====================================================
+         1200px
+      ===================================================== */
+
+      @media (max-width: 1200px) {
+        header,
+        .section1,
+        nav,
+        .category-banner,
+        .container,
+        .newsletter,
+        .footer-main {
+          padding-left: 40px;
+          padding-right: 40px;
+        }
+
+        .product-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      /* =====================================================
+         1000px
+      ===================================================== */
+
+      @media (max-width: 1000px) {
+        .product-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .container {
+          grid-template-columns: 220px minmax(0, 1fr);
+          gap: 20px;
+        }
+
+        .section1 {
+          gap: 15px;
+        }
+
+        .search {
+          max-width: 500px;
+        }
+      }
+
+      /* =====================================================
+         900px
+      ===================================================== */
+
+      @media (max-width: 900px) {
+        .container {
+          grid-template-columns: 1fr;
+          padding: 25px 20px;
+        }
+
+        .filter-sidebar {
+          position: relative;
+          top: 0;
+        }
+
+        .newsletter {
+          padding: 30px 20px;
+
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .footer-main {
+          padding: 40px 20px;
+
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+
+          gap: 30px;
+        }
+
+        .subscribe {
+          width: 100%;
+        }
+
+        .subscribe input {
+          width: 100%;
+        }
+      }
+
+      /* =====================================================
+         768px
+      ===================================================== */
+
+      @media (max-width: 768px) {
+        header,
+        .section1,
+        .category-banner,
+        .container,
+        .newsletter,
+        .footer-main {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+
+        /* TOP */
+
+        header {
+          height: 38px;
+
+          font-size: 12px;
+        }
+
+        /* HEADER */
+
+        .section1 {
+          min-height: auto;
+
+          padding-top: 15px;
+          padding-bottom: 15px;
+
+          flex-direction: column;
+
+          gap: 15px;
+        }
+
+        .logo img {
+          width: 80px;
+        }
+
+        .search {
+          width: 100%;
+          max-width: none;
+        }
+
+        .right-s1 {
+          width: 100%;
+
+          justify-content: space-between;
+        }
+
+        /* NAV */
+
+        nav {
+          height: auto;
+          min-height: 45px;
+
+          padding: 0;
+
+          display: block;
+
+          overflow: visible;
+          white-space: normal;
+        }
+
+        nav > a {
+          display: none;
+        }
+
+        .mobile-products {
+          display: block;
+          width: 100%;
+        }
+
+        /* CATEGORY */
+
+        .category-banner {
+          padding: 25px 15px;
+
+          flex-direction: column;
+
+          text-align: center;
+        }
+
+        .category-icon {
+          width: 58px;
+          height: 58px;
+
+          font-size: 28px;
+        }
+
+        .category-title h1 {
+          font-size: 24px;
+        }
+
+        /* FILTER */
+
+        .filter-sidebar {
+          width: 100%;
+        }
+
+        /* PRODUCTS */
+
+        .product-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+
+          gap: 15px;
+        }
+
+        .product-img {
+          height: 190px;
+        }
+
+        .product-info {
+          padding: 11px;
+        }
+
+        .product-name {
+          font-size: 14px;
+        }
+
+        .product-bottom-row {
+          gap: 5px;
+        }
+
+        .price {
+          font-size: 15px;
+        }
+
+        .price span {
+          font-size: 11px;
+        }
+
+        .product-actions {
+          gap: 4px;
+        }
+
+        .action-btn {
+          width: 28px;
+          height: 28px;
+
+          font-size: 12px;
+        }
+
+        /* FOOTER */
+
+        .footer-main {
+          grid-template-columns: 1fr;
+        }
+
+        .subscribe {
+          flex-direction: column;
+        }
+
+        .subscribe input,
+        .subscribe button {
+          width: 100%;
+        }
+      }
+
+      /* =====================================================
+         600px
+      ===================================================== */
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 20px 12px;
+        }
+
+        .product-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+
+          gap: 12px;
+        }
+
+        .product-img {
+          height: 175px;
+        }
+
+        .product-info {
+          padding: 10px;
+        }
+
+        .product-category {
+          font-size: 11px;
+        }
+
+        .product-name {
+          min-height: 38px;
+
+          font-size: 13px;
+        }
+
+        .rating {
+          margin-top: 6px;
+
+          font-size: 11px;
+        }
+
+        .product-bottom-row {
+          min-height: 35px;
+
+          padding-top: 6px;
+
+          gap: 4px;
+        }
+
+        .price {
+          font-size: 14px;
+        }
+
+        .price span {
+          font-size: 10px;
+        }
+
+        .product-actions {
+          gap: 3px;
+        }
+
+        .action-btn {
+          width: 27px;
+          height: 27px;
+
+          font-size: 11px;
+        }
+      }
+
+      /* =====================================================
+         480px
+      ===================================================== */
+
+      @media (max-width: 480px) {
+        header {
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+
+        .section1 {
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+
+        .logo img {
+          width: 75px;
+        }
+
+        .icons {
+          gap: 15px;
+
+          font-size: 19px;
+        }
+
+        .money p:last-child {
+          font-size: 13px;
+        }
+
+        .category-banner {
+          padding: 22px 12px;
+        }
+
+        .category-title h1 {
+          font-size: 22px;
+        }
+
+        .container {
+          padding: 15px 12px;
+        }
+
+        .products-header {
+          align-items: center;
+        }
+
+        .showing-text {
+          font-size: 13px;
+        }
+
+        .view-btn {
+          width: 34px;
+          height: 34px;
+        }
+
+        .product-grid {
+          gap: 10px;
+        }
+
+        .product-img {
+          height: 165px;
+        }
+
+        .product-info {
+          padding: 9px;
+        }
+
+        .product-name {
+          font-size: 12px;
+        }
+
+        .rating {
+          font-size: 10px;
+        }
+
+        .price {
+          font-size: 13px;
+        }
+
+        .price span {
+          font-size: 9px;
+        }
+
+        .action-btn {
+          width: 25px;
+          height: 25px;
+
+          font-size: 10px;
+        }
+      }
+
+      /* =====================================================
+         360px
+      ===================================================== */
+
+      @media (max-width: 360px) {
+        .product-grid {
+          gap: 8px;
+        }
+
+        .product-img {
+          height: 150px;
+        }
+
+        .product-info {
+          padding: 8px;
+        }
+
+        .product-name {
+          font-size: 11px;
+        }
+
+        .price {
+          font-size: 12px;
+        }
+
+        .price span {
+          display: none;
+        }
+
+        .product-actions {
+          gap: 2px;
+        }
+
+        .action-btn {
+          width: 23px;
+          height: 23px;
+
+          font-size: 9px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
+    <header>
+      <div>
+        <i class="bi bi-telephone"></i>
+        +855 99 456 459
+      </div>
+
+      <div class="lang-dropdown">
+        <div class="lang-btn">
+          <span>US English</span>
+          <i class="bi bi-chevron-down"></i>
+        </div>
+
+        <div class="lang-menu">
+          <a href="kictchen.html" class="lang-item"> US English </a>
+
+          <a href="kitchen_kh.html" class="lang-item"> KH Khmer </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- =====================================================
+         MAIN HEADER
+    ===================================================== -->
+
+    <section class="section1">
+      <div class="logo">
+        <img src="Logo.png" alt="LH Store Logo" />
+      </div>
+
+      <div class="search">
+        <input type="text" placeholder="Search for items..." />
+
+        <i class="bi bi-search"></i>
+      </div>
+
+      <div class="right-s1">
+        <div class="icons">
+          <i class="bi bi-heart"></i>
+          <i class="bi bi-person"></i>
+          <i class="bi bi-cart3"></i>
+        </div>
+
+        <div class="money">
+          <p>My cart</p>
+          <p>$0.00</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         NAVBAR
+    ===================================================== -->
+
+    <nav>
+      <!-- Desktop -->
+
+      <a href="health.html"> Health & Beauty </a>
+
+      <a href="Fashion.html"> Men's Fashion </a>
+
+      <a href="kictchen.html" class="active"> Home & Kitchen </a>
+
+      <a href="Food_drink.html"> Food and Drinks </a>
+
+      <a href="Contact.html"> Contact </a>
+
+      <!-- Mobile -->
+
+      <div class="mobile-products" id="mobileProducts">
+        <div class="mobile-products-btn" id="mobileProductsBtn">
+          <div class="mobile-products-left">
+            <i class="bi bi-grid"></i>
+            <span>Products</span>
+          </div>
+
+          <i class="bi bi-chevron-down"></i>
+        </div>
+
+        <div class="mobile-products-menu">
+          <a href="health.html">
+            Health & Beauty
+            <i class="bi bi-chevron-right"></i>
+          </a>
+
+          <a href="Fashion.html">
+            Men's Fashion
+            <i class="bi bi-chevron-right"></i>
+          </a>
+
+          <a href="kictchen.html" class="active">
+            Home & Kitchen
+            <i class="bi bi-chevron-right"></i>
+          </a>
+
+          <a href="Food_drink.html">
+            Food and Drinks
+            <i class="bi bi-chevron-right"></i>
+          </a>
+
+          <a href="Contact.html">
+            Contact
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- =====================================================
+         CATEGORY BANNER
+    ===================================================== -->
+
+    <div class="category-banner">
+      <div class="category-icon">
+        <i class="bi bi-box-seam"></i>
+      </div>
+
+      <div class="category-title">
+        <h1>Home & Kitchen</h1>
+        <p>74 Products</p>
+      </div>
+    </div>
+
+    <!-- =====================================================
+         MAIN
+    ===================================================== -->
+
+    <div class="container">
+      <!-- FILTER -->
+
+      <aside class="filter-sidebar" data-aos="zoom-in-up">
+        <div class="filter-title">
+          <i class="bi bi-sliders"></i>
+          Filter By
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-item active">
+            <a href="#spices"> Spices </a>
+          </div>
+
+          <div class="filter-item">
+            <a href="#cooking"> Cooking </a>
+          </div>
+
+          <div class="filter-item">
+            <a href="#household"> Household necessities </a>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-item">
+            <a href="index.html" style="color: #000000"> Go to Homepage </a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- PRODUCTS -->
+
+      <main>
+        <div class="products-header" data-aos="zoom-in-up">
+          <div class="showing-text">
+            Showing
+            <strong>24</strong>
+            of
+            <strong>74</strong>
+            Products
+          </div>
+
+          <div class="view-options">
+            <button class="view-btn active">
+              <i class="bi bi-grid-fill"></i>
+            </button>
+
+            <button class="view-btn">
+              <i class="bi bi-list-ul"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="product-grid">
+          <!-- =================================================
+               PRODUCT 1
+          ================================================= -->
+
+          <div class="product-card" id="spices" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1781515496169-IMG_3319.jpg"
+                alt="Soy Sauce 500ml"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Spices</div>
+
+              <div class="product-name">Soy Sauce 500ml</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>4.8</strong>
+                <span>(12)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $2.50
+                  <span>/ bottle</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn" title="Quick view">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn" title="Add to cart">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn" title="Wishlist">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               PRODUCT 2
+          ================================================= -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1781515496169-IMG_3319.jpg"
+                alt="Soy Sauce 500ml"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Spices</div>
+
+              <div class="product-name">Soy Sauce 500ml</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>4.6</strong>
+                <span>(8)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $2.08
+                  <span>/ bottle</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               PRODUCT 3
+          ================================================= -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1781515284363-IMG_3298.jpg"
+                alt="Soy Sauce 200ml"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Spices</div>
+
+              <div class="product-name">Soy Sauce 200ml</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>4.5</strong>
+                <span>(5)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $1.50
+                  <span>/ bottle</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               PRODUCT 4
+          ================================================= -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1781515284363-IMG_3298.jpg"
+                alt="Soy Sauce 200ml"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Spices</div>
+
+              <div class="product-name">Soy Sauce 200ml</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>4.9</strong>
+                <span>(14)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $1.25
+                  <span>/ bottle</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               PRODUCT 5
+          ================================================= -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1781514811885-IMG_3317.jpg"
+                alt="Soy Sauce 100ml"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Spices</div>
+
+              <div class="product-name">Soy Sauce 100ml</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>4.3</strong>
+                <span>(6)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $0.75
+                  <span>/ bottle</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               PRODUCT 6
+          ================================================= -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1781514811885-IMG_3317.jpg"
+                alt="Soy Sauce 100ml"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Spices</div>
+
+              <div class="product-name">Soy Sauce 100ml</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>4.7</strong>
+                <span>(9)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $0.69
+                  <span>/ bottle</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               PRODUCT 7
+          ================================================= -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1781514544886-IMG_3316.jpg"
+                alt="Golden Shark Fish Sauce"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Spices</div>
+
+              <div class="product-name">Golden Shark Fish Sauce 100ml</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>5.0</strong>
+                <span>(18)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $0.75
+                  <span>/ bottle</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               PRODUCT 8
+          ================================================= -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1781514544886-IMG_3316.jpg"
+                alt="Golden Shark Fish Sauce"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Spices</div>
+
+              <div class="product-name">Golden Shark Fish Sauce 100ml</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>4.4</strong>
+                <span>(7)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $0.69
+                  <span>/ bottle</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               PRODUCT 9
+          ================================================= -->
+
+          <div class="product-card" id="cooking" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1780473495319-photo_2026-06-03_14-57-16.jpg"
+                alt="PALAMIDAS Olive Pomace Oil"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Cooking</div>
+
+              <div class="product-name">PALAMIDAS Olive Pomace Oil 3L</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>4.9</strong>
+                <span>(15)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $25.30
+                  <span>/ bottle</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               PRODUCT 10
+          ================================================= -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1780473475913-photo_2026-06-03_14-56-31.jpg"
+                alt="PALAMIDAS Olive Pomace"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Cooking</div>
+
+              <div class="product-name">PALAMIDAS Olive Pomace 750ml</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>4.7</strong>
+                <span>(8)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $10.58
+                  <span>/ bottle</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               PRODUCT 11
+          ================================================= -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1780473475913-photo_2026-06-03_14-56-31.jpg"
+                alt="PALAMIDAS Olive Pomace"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Cooking</div>
+
+              <div class="product-name">PALAMIDAS Olive Pomace 750ml</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>4.5</strong>
+                <span>(6)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $9.20
+                  <span>/ bottle</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               PRODUCT 12
+          ================================================= -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1780472496930-photo_2026-06-03_14-32-00.jpg"
+                alt="Virgin Olive Oil 3L"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Cooking</div>
+
+              <div class="product-name">Virgin Olive Oil 3L</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>5.0</strong>
+                <span>(20)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $33.06
+                  <span>/ Carton</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               PRODUCT 13
+          ================================================= -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1780472496930-photo_2026-06-03_14-32-00.jpg"
+                alt="Virgin Olive Oil 3L"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Cooking</div>
+
+              <div class="product-name">Virgin Olive Oil 3L</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>4.8</strong>
+                <span>(12)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $28.75
+                  <span>/ Carton</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               PRODUCT 14
+          ================================================= -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1780470051020-photo_2026-06-03_14-00-13.jpg"
+                alt="Virgin Olive Oil 1L"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Cooking</div>
+
+              <div class="product-name">Virgin Olive Oil 1L</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>4.6</strong>
+                <span>(10)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $13.23
+                  <span>/ bottle</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               PRODUCT 15
+          ================================================= -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1780470337676-photo_2026-06-03_14-05-26.jpg"
+                alt="Virgin Olive Oil 1L"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Cooking</div>
+
+              <div class="product-name">Virgin Olive Oil 1L</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>4.4</strong>
+                <span>(5)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $11.50
+                  <span>/ bottle</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               PRODUCT 16
+          ================================================= -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1780469474076-photo_2026-06-03_13-50-20.jpg"
+                alt="Virgin Olive Oil 250ml"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Cooking</div>
+
+              <div class="product-name">Virgin Olive Oil 250 ml</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>4.9</strong>
+                <span>(18)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $5.29
+                  <span>/ bottle</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               PRODUCT 17
+          ================================================= -->
+
+          <div class="product-card" id="household" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1780469474076-photo_2026-06-03_13-50-20.jpg"
+                alt="Extra Virgin Olive Oil"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Household necessities</div>
+
+              <div class="product-name">Extra Virgin Olive Oil 250ml</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>4.8</strong>
+                <span>(11)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $5.06
+                  <span>/ bottle</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               PRODUCT 18
+          ================================================= -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1779350579846-a9c3e8f3-5711-4370-9b63-e7cd9703297c.jpg"
+                alt="Organic Kampot Pepper Sauce"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Household necessities</div>
+
+              <div class="product-name">ORGANIC KAMPOT PEPPER SAUCE 330ML</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>4.7</strong>
+                <span>(9)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $6.50
+                  <span>/ bottle</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               PRODUCT 19
+          ================================================= -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1779350104322-a45e05b3-fe7a-4e19-a313-f2925d799112.jpg"
+                alt="Organic Kampot Pepper Sauce"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Household necessities</div>
+
+              <div class="product-name">ORGANIC KAMPOT PEPPER SAUCE 150ML</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>5.0</strong>
+                <span>(14)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $4.00
+                  <span>/ bottle</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               PRODUCT 20
+          ================================================= -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1779349676864-b1e751b1-a212-4eca-b02e-f009538df2f7.jpg"
+                alt="Organic Kampot Pepper Sauce"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Household necessities</div>
+
+              <div class="product-name">ORGANIC KAMPOT PEPPER SAUCE 60ML</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>4.5</strong>
+                <span>(6)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $2.30
+                  <span>/ bottle</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               PRODUCT 21
+          ================================================= -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1779346222730-2542a905-1879-45a5-adc6-1cb7b9aa1f26.jpg"
+                alt="Thnot Sugar Paste"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Household necessities</div>
+
+              <div class="product-name">THNOT SUGAR PASTE JAR 1KG</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>4.9</strong>
+                <span>(18)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $4.50
+                  <span>/ Jar</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               PRODUCT 22
+          ================================================= -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1779346253345-db6aeb21-51b7-4f5f-8642-be16e6cfe921.jpg"
+                alt="Thnot Sugar Paste"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Household necessities</div>
+
+              <div class="product-name">THNOT SUGAR PASTE 200G</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>4.6</strong>
+                <span>(8)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $2.80
+                  <span>/ Jar</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               PRODUCT 23
+          ================================================= -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1779345494832-680faa52-99cd-4edd-9931-7af16e66e26c.jpg"
+                alt="Thnot Organic Syrup Sachet"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Household necessities</div>
+
+              <div class="product-name">
+                THNOT ORGANIC SYRUP SACHET (5ML*20)
+              </div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>4.8</strong>
+                <span>(12)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $3.00
+                  <span>/ Box</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               PRODUCT 24
+          ================================================= -->
+
+          <div class="product-card" data-aos="zoom-in-up">
+            <div class="product-img">
+              <img
+                src="https://bakseymarket.com/api/uploads/products/1779345264249-a1880a2e-406a-4559-8185-3ecf734b92c1.jpg"
+                alt="Thnot Organic Syrup"
+              />
+            </div>
+
+            <div class="product-info">
+              <div class="product-category">Household necessities</div>
+
+              <div class="product-name">THNOT ORGANIC SYRUP 55ML</div>
+
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <strong>4.4</strong>
+                <span>(5)</span>
+              </div>
+
+              <div class="product-bottom-row">
+                <div class="price">
+                  $1.25
+                  <span>/ bottle</span>
+                </div>
+
+                <div class="product-actions">
+                  <div class="action-btn">
+                    <i class="bi bi-eye"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-cart3"></i>
+                  </div>
+
+                  <div class="action-btn">
+                    <i class="bi bi-heart"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+      <div class="newsletter">
+        <div>
+          <h2>Subscribe to Our Newsletter</h2>
+
+          <p>Get updates on new products and exclusive offers!</p>
+        </div>
+
+        <div class="subscribe">
+          <input type="email" placeholder="Enter your email" />
+
+          <button>Subscribe</button>
+        </div>
+      </div>
+
+      <div class="footer-main">
+        <div class="footer-logo">
+          <img src="Logo.png" alt="LH Store Logo" />
+
+          <p>
+            Your one-stop destination for all your shopping needs. Quality
+            products from trusted vendors.
+          </p>
+
+          <div class="social">
+            <i class="bi bi-facebook"></i>
+
+            <i class="bi bi-twitter"></i>
+
+            <i class="bi bi-instagram"></i>
+
+            <i class="bi bi-youtube"></i>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+
+          <p>About Us</p>
+          <p>Contact Us</p>
+          <p>FAQ</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>My Account</h3>
+
+          <p>My Profile</p>
+          <p>Order History</p>
+          <p>Wishlist</p>
+        </div>
+
+        <div class="footer-col contact">
+          <h3>Contact Info</h3>
+
+          <p>
+            <i class="bi bi-geo-alt"></i>
+            #1891 Borey Atwood, Street 110E, Sangkat O'Bek Kaom, Khan Sen Sok,
+            Phnom Penh
+          </p>
+
+          <p>
+            <i class="bi bi-telephone"></i>
+            +855 85 20 75 42
+          </p>
+
+          <p>
+            <i class="bi bi-envelope"></i>
+            kimliheng95@gmail.com
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =====================================================
+         AOS
+    ===================================================== -->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        /* =================================================
+           AOS
+        ================================================= */
+
+        AOS.init({
+          duration: 800,
+          once: false,
+          mirror: true,
+          offset: 80,
+        });
+
+        /* =================================================
+           MOBILE PRODUCTS
+        ================================================= */
+
+        const products = document.getElementById("mobileProducts");
+
+        const productsBtn = document.getElementById("mobileProductsBtn");
+
+        if (products && productsBtn) {
+          productsBtn.addEventListener("click", function (event) {
+            event.stopPropagation();
+
+            products.classList.toggle("open");
+          });
+
+          document.addEventListener("click", function (event) {
+            if (!products.contains(event.target)) {
+              products.classList.remove("open");
+            }
+          });
+        }
+
+        /* =================================================
+           FILTER ACTIVE
+        ================================================= */
+
+        const filterItems = document.querySelectorAll(
+          ".filter-group .filter-item",
+        );
+
+        const sections = document.querySelectorAll(".product-grid > div[id]");
+
+        filterItems.forEach(function (item) {
+          const link = item.querySelector("a");
+
+          if (!link) return;
+
+          link.addEventListener("click", function () {
+            const href = this.getAttribute("href");
+
+            if (href && href.startsWith("#")) {
+              filterItems.forEach(function (i) {
+                i.classList.remove("active");
+              });
+
+              item.classList.add("active");
+            }
+          });
+        });
+
+        /* =================================================
+           SCROLL FILTER ACTIVE
+        ================================================= */
+
+        let ticking = false;
+
+        window.addEventListener(
+          "scroll",
+          function () {
+            if (ticking) return;
+
+            window.requestAnimationFrame(function () {
+              let currentSectionId = "";
+
+              const scrollPosition = window.scrollY + 220;
+
+              sections.forEach(function (section) {
+                const sectionTop = section.offsetTop;
+
+                if (scrollPosition >= sectionTop) {
+                  currentSectionId = section.getAttribute("id");
+                }
+              });
+
+              if (currentSectionId) {
+                filterItems.forEach(function (item) {
+                  const link = item.querySelector("a");
+
+                  if (
+                    link &&
+                    link.getAttribute("href") === "#" + currentSectionId
+                  ) {
+                    filterItems.forEach(function (i) {
+                      i.classList.remove("active");
+                    });
+
+                    item.classList.add("active");
+                  }
+                });
+              }
+
+              ticking = false;
+            });
+
+            ticking = true;
+          },
+          {
+            passive: true,
+          },
+        );
+      });
+    </script>
+  </body>
+</html>
